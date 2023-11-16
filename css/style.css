@@ -1,0 +1,151 @@
+:root {
+  --primary: #00a9ff;
+  --secondary: #ffffff;
+}
+
+*,
+body,
+head {
+  padding: 0;
+  margin: 0;
+  font-family: poppins;
+}
+
+@font-face {
+  font-family: "poppins";
+  src: url("../src/Poppins.ttf");
+}
+
+header {
+  background: var(--primary);
+  color: var(--secondary);
+  padding: 1rem 3rem;
+  margin: 1rem;
+  border-radius: 10px;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+header p {
+  font-size: x-large;
+}
+
+header nav a {
+  color: var(--secondary);
+  text-decoration: none;
+  padding: 1rem;
+}
+
+header nav a:hover {
+  opacity: 0.8;
+}
+
+hero {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  align-items: center;
+  padding: 10rem 5rem;
+  font-size: x-large;
+}
+
+hero div button {
+  background: var(--primary);
+  color: var(--secondary);
+  border: none;
+  padding: 8px 20px;
+  border-radius: 5px;
+  margin-top: 20px;
+  font-size: large;
+}
+
+hero div button a {
+  color: inherit;
+  text-decoration: none;
+}
+
+skill {
+  display: block;
+  color: var(--primary);
+  padding: 8rem 5rem;
+}
+
+skill h2 {
+  letter-spacing: 5px;
+  font-size: 50px;
+  text-align: center;
+  padding: 50px;
+}
+
+skill div {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+}
+
+skill div img {
+  cursor: pointer;
+  transition: 0.2s;
+}
+skill div img:hover {
+  filter: grayscale(0);
+}
+
+project {
+  display: block;
+  padding: 15rem 5rem;
+}
+
+project h2 {
+  font-size: 50px;
+  text-align: center;
+  color: var(--primary);
+}
+
+project > div {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  margin-top: 50px;
+}
+
+.card {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  align-items: center;
+  width: 70%;
+  height: 200px;
+  overflow-y: hidden;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgb(196, 196, 196);
+}
+
+.card img {
+  background: #727272;
+  width: 400px;
+  height: 100%;
+}
+
+.card div {
+  padding: 0px 10px;
+}
+
+footer {
+  background: var(--primary);
+  margin: 1rem;
+  border-radius: 10px;
+  padding: 5rem 2rem;
+}
+
+footer div {
+  display: flex;
+  justify-content: center;
+  gap: 50px;
+}
+
+footer div a img {
+  color: var(--secondary);
+  width: 50px;
+}
