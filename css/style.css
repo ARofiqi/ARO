@@ -1,6 +1,12 @@
 :root {
-  --primary: #00a9ff;
-  --secondary: #F6F4EB;
+  --primary: #12486b;
+  --secondary: #f6f4eb;
+  --linear: linear-gradient(180deg, rgba(18, 72, 107, 1) 0%, rgba(0, 110, 134, 1) 100%);
+}
+
+@font-face {
+  font-family: "poppins";
+  src: url("../src/font/Poppins.ttf");
 }
 
 *,
@@ -11,17 +17,10 @@ head {
   font-family: poppins;
 }
 
-@font-face {
-  font-family: "poppins";
-  src: url("../src/Poppins.ttf");
-}
-
 header {
-  background: var(--primary);
+  background: var(--linear);
   color: var(--secondary);
   padding: 1rem 3rem;
-  margin: 1rem;
-  border-radius: 10px;
 
   display: flex;
   justify-content: space-between;
@@ -53,11 +52,16 @@ hero {
 hero div button {
   background: var(--primary);
   color: var(--secondary);
-  border: none;
+  border: 1px var(--primary) solid;
   padding: 8px 20px;
   border-radius: 5px;
   margin-top: 20px;
   font-size: large;
+}
+
+hero div button:hover{
+  background: var(--secondary);
+  color: var(--primary);
 }
 
 hero div button a {
@@ -78,19 +82,19 @@ skill h2 {
   padding: 50px;
 }
 
-skill div {
+.list-skill {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
   gap: 20px;
 }
 
-skill div img {
+.list-skill img {
   cursor: pointer;
-  transition: 0.2s;
+  height: 70px;
 }
-skill div img:hover {
-  filter: grayscale(0);
+.list-skill img:hover {
+  opacity: .5;
 }
 
 project {
@@ -132,10 +136,15 @@ project > div {
   padding: 0px 10px;
 }
 
+.list-card{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
+}
+
 footer {
-  background: var(--primary);
-  margin: 1rem;
-  border-radius: 10px;
+  background: var(--linear);
   padding: 5rem 2rem;
 }
 

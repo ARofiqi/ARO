@@ -7,6 +7,7 @@
     <script src="./script/jQuery.js"></script>
     <link rel="stylesheet" href="./css/style.css" />
     <link rel="stylesheet" href="./css/mobile.css" />
+    <link rel="stylesheet" href="./css/fiturRahasia.css" />
   </head>
   <body>
     <header>
@@ -19,46 +20,32 @@
       </nav>
     </header>
     <main>
-      <hero>
+      <hero id="home">
         <img src="./src/hero.png" alt="hero" />
         <div>
-          <p>Hi, Saya</p>
+          <p>Assalamualaikum, Saya</p>
           <h1>Ahmad Rofiqi</h1>
           <p>Mahasiswa Teknik Informatika</p>
-          <p>Di Universitas Nusa Putra</p>
-          <button><a href="ahmadrofiqi333@gmail.com">Hubungi Saya</a></button>
+          <button><a href="mailto:ahmadrofiqi333@gmail.com" target="_blank">Hubungi Saya</a></button>
         </div>
       </hero>
-      <skill>
-        <h2>My Skill</h2>
-        <div>
-          <img src="./src/skill/javascript.png" alt="javascript" height="120px" />
-          <img src="./src/skill/html5.png" alt="html5" height="120px" />
-          <img src="./src/skill/css.png" alt="css" height="120px" />
-          <img src="./src/skill/expressJS.png" alt="expressJS" height="120px" />
-          <img src="./src/skill/nodeJS.png" alt="nodeJS" height="120px" />
-        </div>
+      <skill id="skill">
+        <h2>Kemampuan yang dikuasai</h2>
+        <div class="list-skill"></div>
       </skill>
-      <project>
+      <project id="project">
         <h2>Projek yang saya ambil</h2>
-        <div>
-          <div class="card">
-            <img src="" alt="" />
-            <div>
-              <h3>Koperasi Bahagia</h3>
-              <p>Sebuah webapp yang diperuntukan untuk koperasi dalam mengelola barang yang ada didalam gudang</p>
-            </div>
-          </div>
-        </div>
+        <div class="list-card"></div>
       </project>
     </main>
     <footer>
       <div>
-        <a href=""><img src="./src/instagram.svg" alt="instagram" /></a>
-        <a href=""><img src="./src/github.svg" alt="github" /></a>
-        <a href=""><img src="./src/whatsapp.svg" alt="whatsapp" /></a>
-        <a href=""><img src="./src/linkedin.svg" alt="linkedin" /></a>
+        <a href="https://www.instagram.com/aro_543/" target="_blank"><img src="./src/sosmed/instagram.svg" alt="instagram" /></a>
+        <a href="https://github.com/ARofiqi" target="_blank"><img src="./src/sosmed/github.svg" alt="github" /></a>
+        <a href="https://wa.me/0859106924027" target="_blank"><img src="./src/sosmed/whatsapp.svg" alt="whatsapp" /></a>
+        <a href="" target="_blank"><img src="./src/sosmed/linkedin.svg" alt="linkedin" /></a>
       </div>
     </footer>
+    <script src="./script/script.js"></script>
   </body>
 </html>
