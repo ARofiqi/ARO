@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://unpkg.com/@tailwindcss/browser@4"></script>
+    <title>Ahmad Rofiqi</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet" />
+
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div id="header" class="absolute bg-gray-100 px-5 md:px-10 py-3 md:py-4 md:justify-center justify-start items-center fixed opacity-80 w-full z-50 transition-transform duration-300">
+      <button id="hamburger" class="md:hidden text-2xl hover:opacity-50">&#9776;</button>
+
+      <nav class="w-full md:w-auto">
+        <ul id="nav-links" class="w-full md:w-auto justify-start md:justify-center flex gap-3 md:gap-10 hidden md:flex">
+          <li class="w-full md:w-auto"><a href="#home" class="w-full md:w-auto inline-block p-2 md:p-1 text-sm md:text-lg hover:opacity-50">Home</a></li>
+          <li class="w-full md:w-auto"><a href="#galeri" class="w-full md:w-auto inline-block p-2 md:p-1 text-sm md:text-lg hover:opacity-50">Galery</a></li>
+          <li class="w-full md:w-auto"><a href="#aboutMe" class="w-full md:w-auto inline-block p-2 md:p-1 text-sm md:text-lg hover:opacity-50">About Me</a></li>
+          <li class="w-full md:w-auto"><a href="#skills" class="w-full md:w-auto inline-block p-2 md:p-1 text-sm md:text-lg hover:opacity-50">Skills</a></li>
+          <!-- <li class="w-full md:w-auto"><a href="#simpleProject" class="w-full md:w-auto inline-block p-2 md:p-1 text-sm md:text-lg hover:opacity-50">Simple Project</a></li> -->
+          <li class="w-full md:w-auto"><a href="#medsos" class="w-full md:w-auto inline-block p-2 md:p-1 text-sm md:text-lg hover:opacity-50">Media Sosial</a></li>
+        </ul>
+      </nav>
+    </div>
+    <div id="home" class="relative">
+      <div class="absolute inset-0 bg-black opacity-50 z-10"></div>
+      <div class="absolute z-20 pl-5 pb-10 md:py-62 md:px-20 w-full h-full">
+        <h2 class="text-2xl pt-20 md:pt-0 md:text-6xl text-white font-semibold">Assalamualaikum</h2>
+        <p class="text-lg pt-6 md:text-3xl pt-2 md:pt-10 text-gray-200">Halo It`s me</p>
+        <p class="text-xl md:text-5xl text-gray-100">Ahmad Rofiqi</p>
+        <button onclick="window.location.href='tel:+62859106924027'" class="bg-green-500 px-3 md:px-5 py-2 md:py-2 text-sm md:text-lg rounded-lg text-gray-100 mt-5 cursor-pointer hover:opacity-80 flex items-center gap-2 md:gap-3">
+          <svg class="w-4 md:w-6 h-4 md:h-6 fill-gray-100" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
+            <path
+              d="M380.9 97.1C339 55.1 283.2 32 223.9 32c-122.4 0-222 99.6-222 222 0 39.1 10.2 77.3 29.6 111L0 480l117.7-30.9c32.4 17.7 68.9 27 106.1 27h.1c122.3 0 224.1-99.6 224.1-222 0-59.3-25.2-115-67.1-157zm-157 341.6c-33.2 0-65.7-8.9-94-25.7l-6.7-4-69.8 18.3L72 359.2l-4.4-7c-18.5-29.4-28.2-63.3-28.2-98.2 0-101.7 82.8-184.5 184.6-184.5 49.3 0 95.6 19.2 130.4 54.1 34.8 34.9 56.2 81.2 56.1 130.5 0 101.8-84.9 184.6-186.6 184.6zm101.2-138.2c-5.5-2.8-32.8-16.2-37.9-18-5.1-1.9-8.8-2.8-12.5 2.8-3.7 5.6-14.3 18-17.6 21.8-3.2 3.7-6.5 4.2-12 1.4-32.6-16.3-54-29.1-75.5-66-5.7-9.8 5.7-9.1 16.3-30.3 1.8-3.7 .9-6.9-.5-9.7-1.4-2.8-12.5-30.1-17.1-41.2-4.5-10.8-9.1-9.3-12.5-9.5-3.2-.2-6.9-.2-10.6-.2-3.7 0-9.7 1.4-14.8 6.9-5.1 5.6-19.4 19-19.4 46.3 0 27.3 19.9 53.7 22.6 57.4 2.8 3.7 39.1 59.7 94.8 83.8 35.2 15.2 49 16.5 66.6 13.9 10.7-1.6 32.8-13.4 37.4-26.4 4.6-13 4.6-24.1 3.2-26.4-1.3-2.5-5-3.9-10.5-6.6z"
+            />
+          </svg>
+          Call Me
+        </button>
+      </div>
+      <img src="./assets/foto.jpeg" alt="banner" class="md:w-full h-80 md:h-auto object-cover object-[-90px] md:object-center" />
+    </div>
+    <div id="galeri" class="px-5 md:px-20 py-20 md:py-32">
+      <h2 class="text-xl md:text-4xl text-center">Melihat dunia melalui lensa, satu jepretan dalam satu waktu</h2>
+      <div class="py-5 flex gap-2 justify-center">
+        <img
+          src="./assets/galery/foto1.webp"
+          alt=""
+          class="w-1/10 rounded-lg cursor-pointer h-50 md:h-96 bg-gray-200 object-cover transition-all duration-300 hover:w-1/3 active:w-1/2 filter brightness-50 hover:brightness-100 active:brightness-100"
+        />
+        <img
+          src="./assets/galery/foto2.webp"
+          alt=""
+          class="w-1/10 rounded-lg cursor-pointer h-50 md:h-96 bg-gray-200 object-cover transition-all duration-300 hover:w-1/3 active:w-1/2 filter brightness-50 hover:brightness-100 active:brightness-100"
+        />
+        <img
+          src="./assets/galery/foto4.webp"
+          alt=""
+          class="w-1/10 rounded-lg cursor-pointer h-50 md:h-96 bg-gray-200 object-cover transition-all duration-300 hover:w-1/3 active:w-1/2 filter brightness-50 hover:brightness-100 active:brightness-100"
+        />
+        <img
+          src="./assets/galery/foto3.webp"
+          alt=""
+          class="w-1/10 rounded-lg cursor-pointer h-50 md:h-96 bg-gray-200 object-cover transition-all duration-300 hover:w-1/3 active:w-1/2 filter brightness-50 hover:brightness-100 active:brightness-100"
+        />
+        <img
+          src="./assets/galery/foto5.webp"
+          alt=""
+          class="w-1/10 rounded-lg cursor-pointer h-50 md:h-96 bg-gray-200 object-cover transition-all duration-300 hover:w-1/3 active:w-1/2 filter brightness-50 hover:brightness-100 active:brightness-100"
+        />
+      </div>
+      <h3 class="text-xl md:text-4xl text-center">It`s my hobby, cool right</h3>
+    </div>
+    <div id="aboutMe" class="py-20 md:py-20 px-7 md:px-20 justify-center flex flex-col text-center bg-gray-100">
+      <h2 class="text-center text-3xl md:text-6xl">Siapa Saya? Saya seorang Web Developer 😊</h2>
+      <div class="py-5">
+        <p>Kenalin sekali lagi, nama saya Ahmad Rofiqi saya seorang mahasiswa yang ingin menjadi web developer 🎓</p>
+        <p>Saya tau itu gak mudah tapi, saya yakin saya bisa 😁💪</p>
+      </div>
+      <div class="py-5">
+        <p>
+          Saya sudah mempelajari <span class="text-blue-500 font-semibold cursor-pointer hover:text-blue-700" onclick="window.location.href='https://www.w3schools.com/html/'">html</span>,
+          <span class="text-blue-500 font-semibold cursor-pointer hover:text-blue-700" onclick="window.location.href='https://www.w3schools.com/css/'">css</span>, dan
+          <span class="text-blue-500 font-semibold cursor-pointer hover:text-blue-700" onclick="window.location.href='https://www.javascript.com/'">javascript</span> sebagai pondasi untuk pembuatan web 💻
+        </p>
+        <p>
+          dan saya sudah mempelajari <span class="text-blue-500 font-semibold cursor-pointer hover:text-blue-700" onclick="window.location.href='https://vuejs.org/'">VueJs</span> dan
+          <span class="text-blue-500 font-semibold cursor-pointer hover:text-blue-700" onclick="window.location.href='https://reactjs.org/'">ReactJs</span> sebagai frontend nya ⚛️
+        </p>
+        <p>
+          untuk backendnya saya mempelajar <span class="text-blue-500 font-semibold cursor-pointer hover:text-blue-700" onclick="window.location.href='https://expressjs.com/'">ExpressJs</span> dan
+          <span class="text-blue-500 font-semibold cursor-pointer hover:text-blue-700" onclick="window.location.href='https://golang.org/'">Golang</span> yang sedang poluler akhir-akhir ini 🛠️
+        </p>
+      </div>
+      <div class="py-5">
+        <p>Saya belajar diberbagai macam platform seperti Youtube, Codepolitan, Dicoding, dan kampus 📚</p>
+        <p>
+          Ada banyak channel youtube yang menginspirasi saya untuk belajar coding salah satunya
+          <span class="text-blue-500 font-semibold cursor-pointer hover:text-blue-700" onclick="window.location.href='https://www.youtube.com/@sandhikagalihWPU'">Web Programming UNPAS</span> channel youtubenya Pak Sandika Galih saya belajar
+          dari beliau dari mulai lulus dari MAN 🎥
+        </p>
+        <p>yup, saya sekolah di MAN dan gak punya basic coding sama sekali, saya belajar menggunakan aplikasi coding di hp 📱, nama aplikasinya SPCK editor</p>
+        <p>itu sangat menyusahkan tapi dengan usaha yang penuh saya berhasil belajar basic html, css, dan javascript sebelum masuk perkuliahan 😎</p>
+      </div>
+      <div class="py-5">
+        <p>Saya mengikuti program fullstack web di codepolitan di semester 4, itu sangat membantu saya dalam belajar coding lebih lanjut 💡</p>
+        <p>karena materi untuk coding yang lebih lanjut itu sulit untuk ditemukan secara gratis 🆓</p>
+      </div>
+      <div class="py-5">
+        <p>Sekarang saya di semester 5, menuju semester 6. Hanya ingin memberi tau kepada kalian 🔥</p>
+        <p>Untuk kalian yang sedang kesulitan belajar coding, saya tau gimana rasanya sulitmya memahami tulisan yang terbilang baru ditemukan 💭</p>
+        <p>tapi, jika kalian rajin tiap harinya konsisten coding selama 10-20 menit saya yakin dalam waktu 1-2 bulan 📅</p>
+        <p>kalian dapat menguasai dasar dari suatu bahasa pemprograman yang ingin kalian kuasai, jika ditanya apa bahasa pemprograman terbaik?</p>
+        <p>menurut saya, tidak ada. Karena setiap bahasa pemprograman itu ada kelebihan dan kekurangannya masing masing ⚖️</p>
+      </div>
+      <div class="py-5">
+        <p>Tetap Konsisten Coding dan Jangan Lupa Titik Koma ;</p>
+      </div>
+    </div>
+    <div id="skills" class="px-5 md:px-20 py-30 md:py-52">
+      <h2 class="text-3xl md:text-6xl text-center mb-12 text-gray-800">Keahlian yang Saya Kuasai</h2>
+
+      <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-6">
+        <div class="cursor-pointer text-center transform transition duration-300 hover:scale-105 active:scale-105">
+          <img src="https://img.icons8.com/color/96/000000/html-5.png" alt="HTML5" class="mx-auto mb-4 w-24 h-24 md:w-32 md:h-32 transition duration-300 hover:rotate-6 active:rotate-6" />
+          <h3 class="text-lg md:text-xl font-semibold text-gray-800 transition duration-300 hover:text-blue-600 active:text-blue-600">HTML5</h3>
+        </div>
+        <div class="cursor-pointer text-center transform transition duration-300 hover:scale-105 active:scale-105">
+          <img src="https://img.icons8.com/color/96/000000/css3.png" alt="CSS3" class="mx-auto mb-4 w-24 h-24 md:w-32 md:h-32 transition duration-300 hover:rotate-6 active:rotate-6" />
+          <h3 class="text-lg md:text-xl font-semibold text-gray-800 transition duration-300 hover:text-green-600 active:text-green-600">CSS3</h3>
+        </div>
+        <div class="cursor-pointer text-center transform transition duration-300 hover:scale-105 active:scale-105">
+          <img src="https://img.icons8.com/color/96/000000/javascript.png" alt="JavaScript" class="mx-auto mb-4 w-24 h-24 md:w-32 md:h-32 transition duration-300 hover:rotate-6 active:rotate-6" />
+          <h3 class="text-lg md:text-xl font-semibold text-gray-800 transition duration-300 hover:text-yellow-600 active:text-yellow-600">JavaScript</h3>
+        </div>
+        <div class="cursor-pointer text-center transform transition duration-300 hover:scale-105 active:scale-105">
+          <img src="./assets/icons/vueJS.png" alt="Vue.js" class="mx-auto mb-4 w-24 h-24 md:w-32 md:h-32 transition duration-300 hover:rotate-6 active:rotate-6" />
+          <h3 class="text-lg md:text-xl font-semibold text-gray-800 transition duration-300 hover:text-purple-600 active:text-purple-600">Vue.js</h3>
+        </div>
+        <div class="cursor-pointer text-center transform transition duration-300 hover:scale-105 active:scale-105">
+          <img src="https://img.icons8.com/color/96/000000/react-native.png" alt="React.js" class="mx-auto mb-4 w-24 h-24 md:w-32 md:h-32 transition duration-300 hover:rotate-6 active:rotate-6" />
+          <h3 class="text-lg md:text-xl font-semibold text-gray-800 transition duration-300 hover:text-teal-600 active:text-teal-600">React.js</h3>
+        </div>
+        <div class="cursor-pointer text-center transform transition duration-300 hover:scale-105 active:scale-105">
+          <img src="https://img.icons8.com/color/96/000000/nodejs.png" alt="Node.js" class="mx-auto mb-4 w-24 h-24 md:w-32 md:h-32 transition duration-300 hover:rotate-6 active:rotate-6" />
+          <h3 class="text-lg md:text-xl font-semibold text-gray-800 transition duration-300 hover:text-green-600 active:text-green-600">Node.js</h3>
+        </div>
+        <div class="cursor-pointer text-center transform transition duration-300 hover:scale-105 active:scale-105">
+          <img src="https://img.icons8.com/color/96/000000/express-js.png" alt="Express.js" class="mx-auto mb-4 w-24 h-24 md:w-32 md:h-32 transition duration-300 hover:rotate-6 active:rotate-6" />
+          <h3 class="text-lg md:text-xl font-semibold text-gray-800 transition duration-300 hover:text-orange-600 active:text-orange-600">Express.js</h3>
+        </div>
+        <div class="cursor-pointer text-center transform transition duration-300 hover:scale-105 active:scale-105">
+          <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTUTc3wwVFk4RrsQHsAafyJYQOkKwrb7WSIiQ&s" alt="Go" class="mx-auto mb-4 w-24 h-24 md:w-32 md:h-32 transition duration-300 hover:rotate-6 active:rotate-6" />
+          <h3 class="text-lg md:text-xl font-semibold text-gray-800 transition duration-300 hover:text-teal-600 active:text-teal-600">Go (Golang)</h3>
+        </div>
+      </div>
+    </div>
+    <!-- <div id="simpleProject" class="px-20 py-52 bg-gray-200">
+      <h2 class="text-4xl text-center mb-10">Project Simple yang telah saya buat</h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div class="bg-white rounded-2xl shadow-lg hover:shadow-2xl transition transform cursor-pointer">
+          <img src="https://via.placeholder.com/300x200" alt="Project 1" class="rounded-t-2xl w-full h-48 object-cover" />
+          <div class="p-6">
+            <h3 class="text-xl font-semibold mb-2">Project 1</h3>
+            <p class="text-gray-600 mb-4">Deskripsi singkat tentang proyek ini. Misalnya, aplikasi pengelola tugas sederhana.</p>
+            <a href="#" class="inline-block bg-blue-500 text-white px-4 py-2 rounded-lg hover:bg-blue-600">Lihat Detail</a>
+          </div>
+        </div>
+
+        <div class="bg-white rounded-2xl shadow-lg hover:shadow-2xl transition transform cursor-pointer">
+          <img src="https://via.placeholder.com/300x200" alt="Project 2" class="rounded-t-2xl w-full h-48 object-cover" />
+          <div class="p-6">
+            <h3 class="text-xl font-semibold mb-2">Project 2</h3>
+            <p class="text-gray-600 mb-4">Deskripsi singkat tentang proyek ini. Misalnya, website portofolio pribadi.</p>
+            <a href="#" class="inline-block bg-blue-500 text-white px-4 py-2 rounded-lg hover:bg-blue-600">Lihat Detail</a>
+          </div>
+        </div>
+
+        <div class="bg-white rounded-2xl shadow-lg hover:shadow-2xl transition transform cursor-pointer">
+          <img src="https://via.placeholder.com/300x200" alt="Project 3" class="rounded-t-2xl w-full h-48 object-cover" />
+          <div class="p-6">
+            <h3 class="text-xl font-semibold mb-2">Project 3</h3>
+            <p class="text-gray-600 mb-4">Deskripsi singkat tentang proyek ini. Misalnya, kalkulator sederhana berbasis web.</p>
+            <a href="#" class="inline-block bg-blue-500 text-white px-4 py-2 rounded-lg hover:bg-blue-600">Lihat Detail</a>
+          </div>
+        </div>
+      </div>
+    </div> -->
+    <div id="medsos" class="py-20 md:py-42 text-center bg-gray-100">
+      <h2 class="text-xl md:text-4xl mb-8">Ikuti Saya di Media Sosial</h2>
+
+      <div class="flex justify-center flex-col md:flex-row gap-8 items-center">
+        <a href="https://www.instagram.com/aro_543/" target="_blank" class="w-fit bg-white p-4 rounded-full shadow-lg transition duration-300 hover:bg-pink-500 active:bg-pink-500">
+          <img src="https://img.icons8.com/ios-filled/50/000000/instagram-new.png" alt="Instagram" class="w-12 h-12" />
+        </a>
+
+        <a href="https://www.linkedin.com/in/ahmad-rofiqi-8aa90417b/" target="_blank" class="w-fit bg-white p-4 rounded-full shadow-lg transition duration-300 hover:bg-blue-700 active:bg-blue-700">
+          <img src="https://img.icons8.com/ios-filled/50/000000/linkedin.png" alt="LinkedIn" class="w-12 h-12" />
+        </a>
+
+        <a href="https://github.com/ARofiqi" target="_blank" class="w-fit bg-white p-4 rounded-full shadow-lg transition duration-300 hover:bg-gray-900 active:bg-gray-900">
+          <img src="https://img.icons8.com/ios-filled/50/000000/github.png" alt="GitHub" class="w-12 h-12" />
+        </a>
+
+        <a href="https://wa.me/0859106924027" target="_blank" class="w-fit bg-white p-4 rounded-full shadow-lg transition duration-300 hover:bg-green-500 active:bg-green-500">
+          <img src="https://img.icons8.com/ios-filled/50/000000/whatsapp.png" alt="WhatsApp" class="w-12 h-12" />
+        </a>
+      </div>
+    </div>
+
+    <script src="./script.js"></script>
+  </body>
+</html>
