@@ -10,6 +10,8 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet" />
 
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
@@ -213,27 +215,57 @@
         </div>
       </div>
     </div> -->
-    <div id="medsos" class="py-20 md:py-42 text-center bg-gray-100">
-      <h2 class="text-xl md:text-4xl mb-8">Ikuti Saya di Media Sosial</h2>
+    <div class="quote px-10 py-5 rounded-lg text-gray-700">
+      <h2 class="text-3xl font-bold italic mb-4">
+        "Ketika jalan yang kamu ambil terasa <span class="text-blue-600 font-semibold">sulit</span>, bayangkan diri kamu di masa depan, di mana kamu sudah tidak punya <span class="text-blue-600 font-semibold">waktu</span> lagi untuk
+        belajar. Kamu akan menyesal mengapa dulu tidak <span class="text-blue-600 font-semibold">serius belajar</span>. Momen saat ini adalah <span class="text-blue-600 font-semibold">doa yang dikabulkan</span>, karena kamu masih punya
+        kesempatan untuk <span class="text-blue-600 font-semibold">belajar dan berkembang</span>. Jangan sia-siakan <span class="text-blue-600 font-semibold">waktu</span> sebelum
+        <span class="text-blue-600 font-semibold">penyesalan</span> datang."
+      </h2>
+      <p class="text-sm font-semibold">- My Mentor</p>
+    </div>
+    <div id="medsos" class="py-20 md:py-24 text-center bg-gray-50">
+      <h2 class="text-2xl md:text-4xl font-semibold text-gray-800 mb-8">Ikuti Saya di <span class="text-blue-600">Media Sosial</span></h2>
 
-      <div class="flex justify-center flex-col md:flex-row gap-8 items-center">
-        <a href="https://www.instagram.com/aro_543/" target="_blank" class="w-fit bg-white p-4 rounded-full shadow-lg transition duration-300 hover:bg-pink-500 active:bg-pink-500">
-          <img src="https://img.icons8.com/ios-filled/50/000000/instagram-new.png" alt="Instagram" class="w-12 h-12" />
+      <div class="flex justify-center flex-wrap gap-6">
+        <a
+          href="https://www.instagram.com/aro_543/"
+          target="_blank"
+          class="w-16 h-16 flex items-center justify-center bg-gray-500 rounded-full shadow-lg transition-all duration-300 hover:scale-110 hover:shadow-xl hover:bg-gradient-to-br from-pink-500 to-red-500"
+        >
+          <img src="https://img.icons8.com/color/48/instagram-new.png" alt="Instagram" />
         </a>
 
-        <a href="https://www.linkedin.com/in/ahmad-rofiqi-8aa90417b/" target="_blank" class="w-fit bg-white p-4 rounded-full shadow-lg transition duration-300 hover:bg-blue-700 active:bg-blue-700">
-          <img src="https://img.icons8.com/ios-filled/50/000000/linkedin.png" alt="LinkedIn" class="w-12 h-12" />
+        <a
+          href="https://www.linkedin.com/in/ahmad-rofiqi-8aa90417b/"
+          target="_blank"
+          class="w-16 h-16 flex items-center justify-center bg-gray-500 rounded-full shadow-lg transition-all duration-300 hover:scale-110 hover:shadow-xl hover:bg-gradient-to-br from-blue-600 to-blue-800"
+        >
+          <img src="https://img.icons8.com/color/48/linkedin.png" alt="LinkedIn" />
         </a>
 
-        <a href="https://github.com/ARofiqi" target="_blank" class="w-fit bg-white p-4 rounded-full shadow-lg transition duration-300 hover:bg-gray-900 active:bg-gray-900">
-          <img src="https://img.icons8.com/ios-filled/50/000000/github.png" alt="GitHub" class="w-12 h-12" />
+        <a
+          href="https://github.com/ARofiqi"
+          target="_blank"
+          class="w-16 h-16 flex items-center justify-center bg-gray-500 rounded-full shadow-lg transition-all duration-300 hover:scale-110 hover:shadow-xl hover:bg-gradient-to-br from-gray-700 to-black"
+        >
+          <img src="https://img.icons8.com/glyph-neue/48/ffffff/github.png" alt="GitHub" />
         </a>
 
-        <a href="https://wa.me/0859106924027" target="_blank" class="w-fit bg-white p-4 rounded-full shadow-lg transition duration-300 hover:bg-green-500 active:bg-green-500">
-          <img src="https://img.icons8.com/ios-filled/50/000000/whatsapp.png" alt="WhatsApp" class="w-12 h-12" />
+        <a
+          href="https://wa.me/0859106924027"
+          target="_blank"
+          class="w-16 h-16 flex items-center justify-center bg-gray-500 rounded-full shadow-lg transition-all duration-300 hover:scale-110 hover:shadow-xl hover:bg-gradient-to-br from-green-500 to-green-700"
+        >
+          <img src="https://img.icons8.com/color/48/whatsapp.png" alt="WhatsApp" />
         </a>
       </div>
     </div>
+
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script>
+      AOS.init();
+    </script>
 
     <script src="./script.js"></script>
   </body>
