@@ -27,7 +27,7 @@ pipeline {
         stage('Copy to Nginx') {
             steps {
                 script {
-                    sh 'cp -R ./app/dist/* ./ARO/dist/'
+                    sh 'cp -R ./app/dist/* ./app/dist/'
                 }
             }
         }
