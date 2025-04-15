@@ -1,44 +1,18 @@
 pipeline {
     agent any
 
-    environment {
-        GIT_REPO = 'https://github.com/ARofiqi/ARO.git' 
-        BUILD_DIR = './app/dist'
-    }
-
     stages {
-        stage('Clone') {
-            steps {
-                script {
-                    git branch: 'main', url: "$GIT_REPO"
-                }
-            }
-        }
-
         stage('Build') {
             steps {
-                script {
-                    sh 'npm install'
-                    sh 'npm run build'
-                }
+                sh 'npm install'
+                sh 'npm run build'    
             }
         }
 
-        stage('Copy to Nginx') {
+        stage('Deploy') {
             steps {
-                script {
-                    sh 'cp -R ./app/dist/* ./app/dist/'
-                }
+               echo "Deploying ..."
             }
-        }
-    }
-
-    post {
-        success {
-            echo 'Build and deployment completed successfully!'
-        }
-        failure {
-            echo 'Build or deployment failed.'
         }
     }
 }
