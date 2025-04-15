@@ -6,7 +6,7 @@ pipeline {
         VERSION = '1.0.0'   
     }
 
-    trgigers {
+    trigers {
         pollSCM('* * * * *')
     }
 
