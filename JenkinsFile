@@ -6,40 +6,43 @@ pipeline {
         VERSION = '1.0.0'   
     }
 
-    trigers {
+    triggers {
         pollSCM('* * * * *')
     }
 
     stages {
         stage('Install') {
             steps {
-                echo 'Installing dependencies...'
-                sh 'npm install'
+                dir('app') {
+                    echo 'Installing dependencies...'
+                    sh 'npm install'
+                }
             }
         }
+
         stage('Build') {
             steps {
-                echo 'Author: ' + AUTHOR
-                echo 'Version: ' + VERSION
-                echo 'Start Build Project...'
-                sh 'npm run build'
-                echo 'Finish Build Project...'
+                dir('app') {
+                    echo "Author: ${AUTHOR}"
+                    echo "Version: ${VERSION}"
+                    echo 'Start Build Project...'
+                    sh 'npm run build'
+                    echo 'Finish Build Project...'
+                }
             }
         }
+
         stage('Test') {
             steps {
                 echo 'Start Testing...'
-                // Uncomment if you have test
-                // sh 'npm run test'  
                 echo 'No test files yet.'
                 echo 'Finish Testing...'
             }
         }
+
         stage('Deploy') {
             steps {
-                echo 'Deploying project....'
-                // Example:
-                // sh 'scp -r dist/* user@host:/var/www/html'
+                echo 'Simulasi deploy selesai! Akses di http://localhost:3000'
             }
         }
     }
