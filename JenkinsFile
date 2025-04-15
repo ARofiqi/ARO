@@ -1,6 +1,12 @@
 pipeline {
     agent any
     stages {
+        stage('Install') {
+            steps {
+                echo 'Installing dependencies...'
+                sh 'npm install'
+            }
+        }
         stage('Build') {
             steps {
                 echo 'Start Build Project...'
@@ -10,15 +16,18 @@ pipeline {
         }
         stage('Test') {
             steps {
-                echo 'Start Testing..'
-                echo 'No Testing file yet'
+                echo 'Start Testing...'
+                // Uncomment if you have test
                 // sh 'npm run test'  
+                echo 'No test files yet.'
                 echo 'Finish Testing...'
             }
         }
         stage('Deploy') {
             steps {
                 echo 'Deploying project....'
+                // Example:
+                // sh 'scp -r dist/* user@host:/var/www/html'
             }
         }
     }
