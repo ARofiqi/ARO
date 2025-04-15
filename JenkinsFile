@@ -12,14 +12,6 @@ pipeline {
 
     stages {
 
-        stage('Clone Repo') {
-            steps {
-                git branch: 'main',
-                    credentialsId: 'Github-Rofiqi',
-                    url: 'https://github.com/ARofiqi/ARO.git'
-            }
-        }
-
         stage('Install') {
             steps {
                 dir('app') {
