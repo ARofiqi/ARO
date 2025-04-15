@@ -36,6 +36,15 @@ pipeline {
             }
         }
 
+        stage('Copy to NGINX') {
+            steps {
+                echo 'Copying build results to NGINX volume...'
+                // Salin hasil build ke folder yang digunakan oleh NGINX
+                sh 'cp -r ./dist/* ./app/dist'
+                echo 'Build results copied to NGINX.'
+            }
+        }
+
         stage('Test') {
             steps {
                 echo 'Start Testing...'
