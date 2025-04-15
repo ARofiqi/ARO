@@ -2,61 +2,43 @@ pipeline {
     agent any
 
     environment {
-        AUTHOR = 'Ahmad Rofiqi'
-        VERSION = '1.0.0'   
-    }
-
-    triggers {
-        pollSCM('* * * * *') // typo tadi: trigers → triggers
+        GIT_REPO = 'https://github.com/ARofiqi/ARO.git' 
+        BUILD_DIR = './app/dist'
     }
 
     stages {
-
-        stage('Check Directory') {
+        stage('Clone') {
             steps {
-                sh 'pwd'  // untuk cek direktori kerja saat ini
-                sh 'ls -al'  // untuk cek isi folder
-            }
-        }
-
-        stage('Install') {
-            steps {
-                echo 'Installing dependencies...'
-                sh 'npm install'
+                script {
+                    git branch: 'main', url: "$GIT_REPO"
+                }
             }
         }
 
         stage('Build') {
             steps {
-                echo "Author: ${AUTHOR}"
-                echo "Version: ${VERSION}"
-                echo 'Start Build Project...'
-                sh 'npm run build'
-                echo 'Finish Build Project...'
+                script {
+                    sh 'npm install'
+                    sh 'npm run build'
+                }
             }
         }
 
-        stage('Copy to NGINX') {
+        stage('Copy to Nginx') {
             steps {
-                echo 'Copying build results to NGINX volume...'
-                // Salin hasil build ke folder yang digunakan oleh NGINX
-                sh 'cp -r ./dist/* ./app/dist'
-                echo 'Build results copied to NGINX.'
+                script {
+                    sh 'cp -R ./app/dist/* ./ARO/dist/'
+                }
             }
         }
+    }
 
-        stage('Test') {
-            steps {
-                echo 'Start Testing...'
-                echo 'No test files yet.'
-                echo 'Finish Testing...'
-            }
+    post {
+        success {
+            echo 'Build and deployment completed successfully!'
         }
-
-        stage('Deploy') {
-            steps {
-                echo 'Simulasi deploy selesai! Akses di http://localhost:3000'
-            }
+        failure {
+            echo 'Build or deployment failed.'
         }
     }
 }
