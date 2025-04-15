@@ -12,24 +12,27 @@ pipeline {
 
     stages {
 
+        stage('Check Directory') {
+            steps {
+                sh 'pwd'  // untuk cek direktori kerja saat ini
+                sh 'ls -al'  // untuk cek isi folder
+            }
+        }
+
         stage('Install') {
             steps {
-                dir('app') {
-                    echo 'Installing dependencies...'
-                    sh 'npm install'
-                }
+                echo 'Installing dependencies...'
+                sh 'npm install'
             }
         }
 
         stage('Build') {
             steps {
-                dir('app') {
-                    echo "Author: ${AUTHOR}"
-                    echo "Version: ${VERSION}"
-                    echo 'Start Build Project...'
-                    sh 'npm run build'
-                    echo 'Finish Build Project...'
-                }
+                echo "Author: ${AUTHOR}"
+                echo "Version: ${VERSION}"
+                echo 'Start Build Project...'
+                sh 'npm run build'
+                echo 'Finish Build Project...'
             }
         }
 
