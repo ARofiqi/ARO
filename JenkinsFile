@@ -3,7 +3,11 @@ pipeline {
 
     environment {
         AUTHOR = 'Ahmad Rofiqi'
-        VERSION = '1.0.0'
+        VERSION = '1.0.0'   
+    }
+
+    trgigers {
+        pollSCM('* * * * *')
     }
 
     stages {
