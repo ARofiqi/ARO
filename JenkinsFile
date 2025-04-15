@@ -1,23 +1,24 @@
 pipeline {
-    agent {
-        node {
-            label "master"
-        }
-    }
+    agent any
     stages {
         stage('Build') {
             steps {
-                echo 'Building..'
+                echo 'Start Build Project...'
+                sh 'npm run build'
+                echo 'Finish Build Project...'
             }
         }
         stage('Test') {
             steps {
-                echo 'Testing..'
+                echo 'Start Testing..'
+                echo 'No Testing file yet'
+                // sh 'npm run test'  
+                echo 'Finish Testing...'
             }
         }
         stage('Deploy') {
             steps {
-                echo 'Deploying....'
+                echo 'Deploying project....'
             }
         }
     }
