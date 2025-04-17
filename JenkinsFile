@@ -12,6 +12,7 @@ pipeline {
             steps {
                 sh 'npm install'
                 sh 'npm run build'
+                echo "Building file ${env.WORKSPACE}"
             }
         }
 
