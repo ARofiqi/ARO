@@ -2,32 +2,29 @@ pipeline {
     agent any
 
     stages {
+        stage('Install') {
+            steps {
+                sh "npm install"
+            }
+        }
+
         stage('Test') {
             steps {
                 echo "Testing ..."
+                // sh "npm test"
             }
         }
 
         stage('Build') {
             steps {
-                sh 'npm install'
                 sh 'npm run build'
-                echo "Building file ${env.WORKSPACE}/dist"
+                // echo "Building file ${env.WORKSPACE}/dist"
             }
         }
 
         stage('Deploy') {
             steps {
-                echo "Deploying ..."
-
-                // Hapus konten lama di dalam container Nginx (opsional)
-                sh "docker exec nginx-container rm -rf /usr/share/nginx/html/*"
-
-                // Copy hasil build ke dalam container Nginx
-                sh "docker cp ${env.WORKSPACE}/dist/. nginx-container:/usr/share/nginx/html"
-
-                // Restart container Nginx
-                sh "docker restart nginx-container"
+                sh './deploy.sh'
             }
         }
     }
