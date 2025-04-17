@@ -1,54 +1,12 @@
+@Library("sharedLibrary") _
+
 pipeline {
-    agent { label 'nodejs-agent' } 
-
-    environment {
-        DEPLOY_USER = 'ubuntu'
-        DEPLOY_HOST = '123.123.123.123'
-        DEPLOY_PATH = '/var/www/html'
-        SSH_CREDENTIALS_ID = 'my-ssh-key'
-    }
-
+    agent any
     stages {
-        stage('Install Dependencies') {
+        stage('World') {
             steps {
-                sh 'npm ci' // lebih cepat dan aman daripada `npm install`
+                world()
             }
-        }
-
-        stage('Test') {
-            steps {
-                echo "Running tests..."
-                // sh 'npm test'
-            }
-        }
-
-        stage('Build') {
-            steps {
-                sh 'rm -rf build' // bersihkan hasil build lama
-                sh 'npm run build'
-            }
-        }
-
-        stage('Deploy') {
-            steps {
-                echo "Deploying to VPS..."
-
-                // Menggunakan ssh agent plugin
-                // sshagent (credentials: [env.SSH_CREDENTIALS_ID]) {
-                //     sh """
-                //     scp -r build/* ${DEPLOY_USER}@${DEPLOY_HOST}:${DEPLOY_PATH}
-                //     """
-                // }
-            }
-        }
-    }
-
-    post {
-        success {
-            echo '✅ Pipeline berhasil!'
-        }
-        failure {
-            echo '❌ Pipeline gagal. Cek log di atas.'
         }
     }
 }
