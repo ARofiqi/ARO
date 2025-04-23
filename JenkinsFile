@@ -24,5 +24,12 @@ pipeline {
                 }
             }
         }
+        stage('list param') {
+            steps {
+                script {
+                    echo hello.say(["Ahmad", "Rofiqi"])
+                }
+            }
+        }
     }
 }
