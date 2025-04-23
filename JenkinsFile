@@ -31,5 +31,12 @@ pipeline {
                 }
             }
         }
+        stage('object param') {
+            steps {
+                script {
+                    hello.person([name: "Ahmad", age: 22])
+                }
+            }
+        }
     }
 }
