@@ -3,6 +3,13 @@
 pipeline {
     agent any
     stages {
+        stage('Step call') {
+            steps {
+                script {
+                    hello()
+                }
+            }
+        }
         stage('Hello World') {
             steps {
                 script {
