@@ -17,5 +17,12 @@ pipeline {
                 }
             }
         }
+        stage('with param') {
+            steps {
+                script {
+                    echo hello.say("Ahmad Rofiqi")
+                }
+            }
+        }
     }
 }
