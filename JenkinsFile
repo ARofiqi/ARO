@@ -38,5 +38,14 @@ pipeline {
                 }
             }
         }
+        stage('config') {
+            steps {
+                script {
+                    def config = LibraryResource("config/build.json")
+                    echo config
+                    hello.config()
+                }
+            }
+        }
     }
 }
