@@ -1,0 +1,25 @@
+{
+  "name": "aro",
+  "version": "1.0.0",
+  "description": "my web portofolio for show my skill and my experience",
+  "homepage": "https://github.com/ARofiqi/ARO#readme",
+  "bugs": {
+    "url": "https://github.com/ARofiqi/ARO/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ARofiqi/ARO.git"
+  },
+  "license": "ISC",
+  "author": "ahmad rofiqi",
+  "type": "commonjs",
+  "main": "app.js",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "devDependencies": {
+    "vite": "^6.2.6"
+  }
+}
