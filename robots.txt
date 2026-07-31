@@ -1,0 +1,15 @@
+# ============================================
+# robots.txt — Ahmad Rofiqi Portfolio
+# Domain: https://aro.web.id
+# ============================================
+
+# Izinkan semua crawler mengakses seluruh halaman
+User-agent: *
+Allow: /
+
+# Blokir akses ke aset yang tidak perlu diindeks
+Disallow: /node_modules/
+Disallow: /.git/
+
+# Referensi sitemap
+Sitemap: https://aro.web.id/sitemap.xml

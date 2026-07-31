@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:xhtml="http://www.w3.org/1999/xhtml">
+
+  <!-- ======================================== -->
+  <!-- Sitemap for Ahmad Rofiqi Portfolio       -->
+  <!-- Domain  : https://aro.web.id             -->
+  <!-- Updated : 2026-07-31                     -->
+  <!-- ======================================== -->
+
+  <!-- Halaman Utama -->
+  <url>
+    <loc>https://aro.web.id/</loc>
+    <lastmod>2026-07-31</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>1.0</priority>
+  </url>
+
+  <!-- Hero Section -->
+  <url>
+    <loc>https://aro.web.id/#home</loc>
+    <lastmod>2026-07-31</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+  <!-- Skills / Tech Stack Section -->
+  <url>
+    <loc>https://aro.web.id/#skills</loc>
+    <lastmod>2026-07-31</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- About Me / Timeline Section -->
+  <url>
+    <loc>https://aro.web.id/#aboutMe</loc>
+    <lastmod>2026-07-31</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- Galeri Section -->
+  <url>
+    <loc>https://aro.web.id/#galeri</loc>
+    <lastmod>2026-07-31</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+
+  <!-- Sertifikat Section -->
+  <url>
+    <loc>https://aro.web.id/#certificates</loc>
+    <lastmod>2026-07-31</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- Projects Section -->
+  <url>
+    <loc>https://aro.web.id/#projects</loc>
+    <lastmod>2026-07-31</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+  <!-- Footer / Social Media Section -->
+  <url>
+    <loc>https://aro.web.id/#medsos</loc>
+    <lastmod>2026-07-31</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.5</priority>
+  </url>
+
+</urlset>

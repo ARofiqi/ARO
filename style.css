@@ -1,4 +1,83 @@
 * {
-  font-family: "Poppins", serif;
+  font-family: "Poppins", sans-serif;
   font-style: normal;
+}
+
+/* Lenis Smooth Scroll Customizations */
+html.lenis, html.lenis body { height: auto; }
+.lenis.lenis-smooth { scroll-behavior: auto !important; }
+.lenis.lenis-smooth [data-lenis-prevent] { overscroll-behavior: contain; }
+.lenis.lenis-stopped { overflow: hidden; }
+.lenis.lenis-scrolling iframe { pointer-events: none; }
+
+/* Custom Scrollbar for Drawer and Sections */
+.custom-scrollbar::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+.custom-scrollbar::-webkit-scrollbar-track {
+  background: rgba(15, 23, 42, 0.6);
+  border-radius: 8px;
+}
+.custom-scrollbar::-webkit-scrollbar-thumb {
+  background: rgba(51, 65, 85, 0.8);
+  border-radius: 8px;
+}
+.custom-scrollbar::-webkit-scrollbar-thumb:hover {
+  background: rgba(37, 211, 102, 0.6);
+}
+
+/* Drawer Scroll Optimization & Touch Scroll Support */
+[data-lenis-prevent], #cert-drawer-panel, #drawer-scroll-content {
+  overscroll-behavior: contain;
+  -webkit-overflow-scrolling: touch;
+}
+#drawer-scroll-content {
+  overflow-y: auto !important;
+  max-height: 100%;
+}
+
+/* Efek Game Card UI & Certificate Aspect Ratio */
+.fps-card {
+  transform-style: preserve-3d;
+  transform: perspective(1000px);
+  will-change: transform;
+}
+.fps-card-content, .cert-card-inner {
+  transform: translateZ(25px);
+  transform-style: preserve-3d;
+}
+.fps-card::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: 1.5rem;
+  border: 2px solid transparent;
+  background: linear-gradient(135deg, transparent 20%, rgba(37, 211, 102, 0.5) 50%, transparent 80%) border-box;
+  -webkit-mask: linear-gradient(#fff 0 0) padding-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  opacity: 0;
+  transition: opacity 0.4s ease, transform 0.4s ease;
+  pointer-events: none;
+}
+.fps-card:hover::before { 
+  opacity: 1; 
+}
+
+/* Glow Pulse Animation for Rarity Badges */
+@keyframes pulseGlow {
+  0%, 100% { opacity: 0.8; transform: scale(1); }
+  50% { opacity: 1; transform: scale(1.03); }
+}
+.animate-pulse-glow {
+  animation: pulseGlow 3s infinite ease-in-out;
+}
+
+/* Drawer Backdrop & Panel transitions */
+#cert-drawer-backdrop {
+  transition: opacity 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+#cert-drawer-panel {
+  transition: transform 0.45s cubic-bezier(0.16, 1, 0.3, 1);
 }
