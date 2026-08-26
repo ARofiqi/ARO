@@ -81,3 +81,274 @@ html.lenis, html.lenis body { height: auto; }
 #cert-drawer-panel {
   transition: transform 0.45s cubic-bezier(0.16, 1, 0.3, 1);
 }
+
+/* ===== HERO BLOB PHOTO ===== */
+@keyframes heroFloat {
+  0%, 100% { transform: translateY(0px) rotate(0deg); }
+  33%       { transform: translateY(-14px) rotate(1.2deg); }
+  66%       { transform: translateY(-7px) rotate(-1deg); }
+}
+
+@keyframes blobMorph {
+  0%, 100% { clip-path: polygon(42% 0%,70% 6%,94% 18%,100% 45%,93% 70%,75% 90%,48% 100%,20% 93%,4% 74%,0% 46%,8% 20%,25% 5%); }
+  25%      { clip-path: polygon(50% 0%,80% 8%,98% 32%,96% 62%,80% 85%,56% 98%,28% 96%,8% 78%,0% 52%,6% 26%,22% 8%,38% 0%); }
+  50%      { clip-path: polygon(38% 2%,66% 0%,92% 14%,100% 42%,95% 68%,78% 92%,50% 100%,22% 96%,5% 76%,0% 48%,5% 22%,20% 7%); }
+  75%      { clip-path: polygon(46% 0%,74% 5%,96% 22%,100% 50%,90% 74%,70% 92%,44% 100%,18% 90%,2% 68%,0% 42%,10% 18%,28% 4%); }
+}
+
+@keyframes ringPulse {
+  0%, 100% { opacity: 0.3; transform: scale(1); }
+  50%       { opacity: 0.55; transform: scale(1.05); }
+}
+
+.hero-blob-wrapper {
+  position: relative;
+  width: 300px;
+  height: 340px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  animation: heroFloat 7s ease-in-out infinite;
+  flex-shrink: 0;
+}
+
+@media (min-width: 768px) {
+  .hero-blob-wrapper { width: 380px; height: 430px; }
+}
+@media (min-width: 1024px) {
+  .hero-blob-wrapper { width: 440px; height: 500px; }
+}
+
+.hero-blob-ring {
+  position: absolute;
+  inset: -18px;
+  border-radius: 9999px;
+  background: conic-gradient(from 0deg, #25D366, #10b981, #059669, transparent 60%, #25D366);
+  opacity: 0.3;
+  filter: blur(10px);
+  animation: ringPulse 4s ease-in-out infinite;
+  pointer-events: none;
+}
+
+.hero-blob-img-wrap {
+  width: 100%;
+  height: 100%;
+  animation: blobMorph 14s ease-in-out infinite;
+  overflow: hidden;
+  position: relative;
+  z-index: 2;
+}
+
+.hero-blob-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center top;
+  display: block;
+  transition: transform 0.6s ease;
+}
+.hero-blob-wrapper:hover .hero-blob-img {
+  transform: scale(1.06);
+}
+
+/* Dekorasi dot */
+.hero-dot {
+  position: absolute;
+  border-radius: 9999px;
+  background: #25D366;
+  z-index: 3;
+  animation: heroFloat 5s ease-in-out infinite;
+}
+.hero-dot-1 {
+  width: 14px; height: 14px;
+  top: 6%; left: 2%;
+  opacity: 0.75;
+  animation-delay: 0s; animation-duration: 6s;
+}
+.hero-dot-2 {
+  width: 9px; height: 9px;
+  bottom: 10%; right: 1%;
+  opacity: 0.55;
+  animation-delay: 1.8s; animation-duration: 8s;
+}
+.hero-dot-3 {
+  width: 6px; height: 6px;
+  top: 52%; left: -1%;
+  opacity: 0.35;
+  animation-delay: 3.2s; animation-duration: 5s;
+}
+/* ===== END HERO BLOB ===== */
+
+/* ======================================================
+   CONTACT FORM - Footer
+   ====================================================== */
+
+.contact-card {
+  transition: box-shadow 0.3s ease;
+}
+.contact-card:hover {
+  box-shadow: 0 20px 60px -10px rgba(0, 0, 0, 0.1), 0 8px 24px -6px rgba(0,0,0,0.05);
+}
+
+/* Label */
+.contact-label {
+  display: block;
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: #374151;
+  letter-spacing: 0.03em;
+  margin-bottom: 6px;
+  text-transform: uppercase;
+}
+
+/* Input wrapper with icon */
+.contact-input-icon-wrap {
+  position: relative;
+}
+.contact-input-icon {
+  position: absolute;
+  left: 14px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 16px;
+  height: 16px;
+  color: #9ca3af;
+  pointer-events: none;
+  transition: color 0.2s ease;
+}
+.contact-field-wrap:focus-within .contact-input-icon {
+  color: #111827;
+}
+
+/* Input & Textarea base */
+.contact-input {
+  width: 100%;
+  padding: 11px 14px 11px 38px;
+  border: 1.5px solid #e5e7eb;
+  border-radius: 10px;
+  font-size: 0.875rem;
+  color: #1f2937;
+  background: #f9fafb;
+  outline: none;
+  transition: border-color 0.25s ease, background 0.25s ease, box-shadow 0.25s ease;
+}
+.contact-input::placeholder {
+  color: #c4c9d4;
+}
+.contact-input:focus {
+  border-color: #111827;
+  background: #ffffff;
+  box-shadow: 0 0 0 3px rgba(17, 24, 39, 0.1);
+}
+.contact-input.input-error {
+  border-color: #f87171;
+  box-shadow: 0 0 0 3px rgba(248, 113, 113, 0.12);
+}
+
+/* Textarea specific */
+.contact-textarea {
+  padding-left: 14px;
+  resize: vertical;
+  min-height: 120px;
+  line-height: 1.6;
+}
+
+/* Field wrap spacing */
+.contact-field-wrap {
+  display: flex;
+  flex-direction: column;
+}
+
+/* Error text */
+.contact-error {
+  font-size: 0.73rem;
+  color: #ef4444;
+  margin-top: 4px;
+  min-height: 16px;
+  display: block;
+}
+
+/* Submit button */
+.contact-submit-btn {
+  display: block;
+  padding: 13px 24px;
+  background: linear-gradient(135deg, #1f2937 0%, #000000 100%);
+  color: #fff;
+  font-size: 0.9rem;
+  font-weight: 600;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+  transition: transform 0.2s ease, box-shadow 0.2s ease, opacity 0.2s ease;
+  box-shadow: 0 4px 18px rgba(0, 0, 0, 0.15);
+  letter-spacing: 0.02em;
+}
+.contact-submit-btn::after {
+  content: '';
+  position: absolute;
+  top: 0; left: -100%;
+  width: 60%;
+  height: 100%;
+  background: linear-gradient(120deg, transparent, rgba(255,255,255,0.2), transparent);
+  transform: skewX(-15deg);
+  transition: left 0.55s ease;
+}
+.contact-submit-btn:hover::after {
+  left: 160%;
+}
+.contact-submit-btn:hover:not(:disabled) {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 28px rgba(0, 0, 0, 0.25);
+}
+.contact-submit-btn:active:not(:disabled) {
+  transform: translateY(0);
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.15);
+}
+.contact-submit-btn:disabled {
+  opacity: 0.65;
+  cursor: not-allowed;
+}
+
+/* Alert boxes */
+.contact-alert {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  padding: 13px 16px;
+  border-radius: 10px;
+  font-size: 0.86rem;
+  font-weight: 500;
+  margin-top: 16px;
+  animation: fadeSlideUp 0.35s ease forwards;
+}
+.contact-alert.hidden {
+  display: none !important;
+}
+.contact-alert-success {
+  background: #f9fafb;
+  border: 1.5px solid #d1d5db;
+  color: #1f2937;
+}
+.contact-alert-error {
+  background: rgba(239, 68, 68, 0.07);
+  border: 1.5px solid rgba(239, 68, 68, 0.3);
+  color: #b91c1c;
+}
+
+@keyframes fadeSlideUp {
+  from { opacity: 0; transform: translateY(8px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+/* Spinner */
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+.animate-spin {
+  animation: spin 0.8s linear infinite;
+}
+
+/* ===== END CONTACT FORM ===== */
+

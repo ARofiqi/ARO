@@ -1,10 +1,10 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="id">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <script src="https://unpkg.com/@tailwindcss/browser@4"></script>
-    
+
     <title>Ahmad Rofiqi | Web & Software Developer</title>
 
     <meta name="description" content="Portofolio Ahmad Rofiqi | Fresh Graduate Teknik Informatika, Web & Software Developer dengan fokus pada arsitektur Offline-First, React, Next.js, dan modern web apps." />
@@ -23,14 +23,27 @@
     <link rel="stylesheet" href="./style.css" />
 
     <style>
-      body { font-family: 'Poppins', sans-serif; }
-      
+      body {
+        font-family: "Poppins", sans-serif;
+      }
+
       /* Lenis Smooth Scroll */
-      html.lenis, html.lenis body { height: auto; }
-      .lenis.lenis-smooth { scroll-behavior: auto !important; }
-      .lenis.lenis-smooth [data-lenis-prevent] { overscroll-behavior: contain; }
-      .lenis.lenis-stopped { overflow: hidden; }
-      .lenis.lenis-scrolling iframe { pointer-events: none; }
+      html.lenis,
+      html.lenis body {
+        height: auto;
+      }
+      .lenis.lenis-smooth {
+        scroll-behavior: auto !important;
+      }
+      .lenis.lenis-smooth [data-lenis-prevent] {
+        overscroll-behavior: contain;
+      }
+      .lenis.lenis-stopped {
+        overflow: hidden;
+      }
+      .lenis.lenis-scrolling iframe {
+        pointer-events: none;
+      }
 
       /* Efek Game Card UI untuk Sertifikat */
       .fps-card {
@@ -41,76 +54,153 @@
         transform: translateZ(30px);
       }
       .fps-card::before {
-        content: '';
+        content: "";
         position: absolute;
         inset: 0;
         border-radius: 1.5rem;
         border: 2px solid transparent;
         background: linear-gradient(120deg, transparent, rgba(37, 211, 102, 0.4), transparent) border-box;
-        -webkit-mask: linear-gradient(#fff 0 0) padding-box, linear-gradient(#fff 0 0);
+        -webkit-mask:
+          linear-gradient(#fff 0 0) padding-box,
+          linear-gradient(#fff 0 0);
         -webkit-mask-composite: xor;
         mask-composite: exclude;
         opacity: 0;
         transition: opacity 0.3s ease;
       }
-      .fps-card:hover::before { opacity: 1; }
+      .fps-card:hover::before {
+        opacity: 1;
+      }
     </style>
   </head>
   <body class="bg-gray-50 text-gray-800 antialiased overflow-x-hidden">
+    <header id="header" class="fixed w-[92%] max-w-5xl left-1/2 -translate-x-1/2 top-4 z-50 bg-white/90 backdrop-blur-xl border border-gray-200/60 rounded-2xl md:rounded-full shadow-sm transition-transform duration-300">
+      <div class="px-5 sm:px-6 md:px-8 py-3.5 md:py-3 flex justify-between items-center relative">
+        <a href="#home" class="font-extrabold text-2xl text-gray-900 tracking-tight">Rofiqi<span class="text-gray-400">.</span></a>
 
-    <header id="header" class="fixed w-[92%] max-w-5xl left-1/2 -translate-x-1/2 top-4 z-50 bg-white/80 backdrop-blur-md border border-gray-200/50 rounded-full shadow-lg transition-all duration-300">
-      <div class="px-5 sm:px-6 md:px-8 py-3 md:py-4 flex justify-between items-center relative">
-        <a href="#home" class="font-bold text-2xl text-gray-800 tracking-tight">Rofiqi<span class="text-[#25D366]">.</span></a>
-        
-        <button id="hamburger" class="md:hidden text-2xl text-gray-800 hover:text-[#25D366] transition-colors focus:outline-none">&#9776;</button>
-        
-        <nav id="nav-menu" class="absolute top-full left-0 w-full bg-white rounded-2xl overflow-hidden shadow-xl md:shadow-none md:bg-transparent md:static md:w-auto hidden md:block transition-all duration-300 border md:border-none border-gray-100">
-          <ul class="flex flex-col md:flex-row gap-0 md:gap-6 lg:gap-8 text-sm font-medium text-gray-700">
-            <li><a href="#home" class="block px-6 py-4 md:p-0 border-b border-gray-100 md:border-none hover:text-[#25D366] transition-colors">Home</a></li>
-            <li><a href="#skills" class="block px-6 py-4 md:p-0 border-b border-gray-100 md:border-none hover:text-[#25D366] transition-colors">Skills</a></li>
-            <li><a href="#aboutMe" class="block px-6 py-4 md:p-0 border-b border-gray-100 md:border-none hover:text-[#25D366] transition-colors">About Me</a></li>
-            <li><a href="#galeri" class="block px-6 py-4 md:p-0 border-b border-gray-100 md:border-none hover:text-[#25D366] transition-colors">Galeri</a></li>
-            <li><a href="#certificates" class="block px-6 py-4 md:p-0 border-b border-gray-100 md:border-none hover:text-[#25D366] transition-colors">Sertifikat</a></li>
-            <li><a href="#projects" class="block px-6 py-4 md:p-0 hover:text-[#25D366] transition-colors">Projects</a></li>
+        <button id="hamburger" class="md:hidden text-2xl text-gray-800 hover:text-black transition-colors focus:outline-none">&#9776;</button>
+
+        <nav id="nav-menu" class="absolute top-full left-0 mt-3 w-full bg-white rounded-2xl overflow-hidden shadow-xl md:shadow-none md:bg-transparent md:static md:w-auto md:mt-0 hidden md:block border border-gray-100 md:border-none">
+          <ul class="flex flex-col md:flex-row md:items-center gap-1 md:gap-2 p-3 md:p-0 text-sm font-semibold text-gray-600">
+            <li><a href="#home" class="block px-4 py-2.5 rounded-xl md:rounded-full hover:bg-gray-100 hover:text-gray-900 transition-all">Home</a></li>
+            <li><a href="#projects" class="block px-4 py-2.5 rounded-xl md:rounded-full hover:bg-gray-100 hover:text-gray-900 transition-all">Projects</a></li>
+            <li><a href="#skills" class="block px-4 py-2.5 rounded-xl md:rounded-full hover:bg-gray-100 hover:text-gray-900 transition-all">Skills</a></li>
+            <li><a href="#aboutMe" class="block px-4 py-2.5 rounded-xl md:rounded-full hover:bg-gray-100 hover:text-gray-900 transition-all">About</a></li>
+            <li><a href="#galeri" class="block px-4 py-2.5 rounded-xl md:rounded-full hover:bg-gray-100 hover:text-gray-900 transition-all">Galeri</a></li>
+            <li><a href="#certificates" class="block px-4 py-2.5 rounded-xl md:rounded-full hover:bg-gray-100 hover:text-gray-900 transition-all">Sertifikat</a></li>
+            <li class="mt-2 md:mt-0 md:ml-2">
+              <a href="#medsos" class="block px-5 py-2.5 text-center rounded-xl md:rounded-full bg-gray-900 text-white hover:bg-black hover:shadow-md hover:-translate-y-0.5 transition-all">Hubungi</a>
+            </li>
           </ul>
         </nav>
       </div>
     </header>
 
-    <section id="home" class="relative w-full h-screen bg-cover bg-[60%_center] md:bg-center bg-no-repeat flex items-center" style="background-image: url('./public/foto.webp');">
-      
+    <section id="home" class="relative w-full h-screen bg-cover bg-[60%_center] md:bg-center bg-no-repeat flex items-center" style="background-image: url(&quot;./public/foto.webp&quot;)">
       <div class="absolute inset-0 bg-gradient-to-r from-gray-900/95 via-gray-900/80 md:via-gray-900/50 to-transparent z-10"></div>
-      
+
       <div class="relative z-20 w-full max-w-7xl mx-auto px-5 sm:px-6 md:px-12 mt-16 md:mt-0">
         <div class="max-w-[100%] sm:max-w-xl md:max-w-2xl pr-4 md:pr-0" data-aos="fade-up" data-aos-duration="1000">
-          
-          <h2 class="text-sm sm:text-2xl md:text-3xl text-green-400 font-semibold mb-1 sm:mb-2 tracking-wide uppercase">Fresh Graduate Teknik Informatika | Web & Software Developer</h2>
-          
+          <h2 class="text-sm sm:text-2xl md:text-3xl text-green-400 font-semibold mb-1 sm:mb-2 tracking-wide uppercase">Web & Software Developer</h2>
+
           <h1 class="text-4xl sm:text-5xl md:text-7xl text-white font-bold tracking-tight mb-3 sm:mb-6 mt-1 sm:mt-4 leading-tight">Ahmad Rofiqi</h1>
-          
+
           <p class="text-xs sm:text-base md:text-lg text-gray-300 mb-6 sm:mb-8 leading-relaxed md:max-w-xl">
-            Lulusan S1 Teknik Informatika yang memadukan fondasi kuat ilmu komputer dengan keahlian industri modern. Berspesialisasi dalam merancang <span class="text-white font-semibold">Aplikasi Web & Perangkat Lunak</span> berbasis arsitektur skalabel, kode yang bersih <i>(Clean Code)</i>, dan performa tinggi untuk menjawab tantangan bisnis digital.
+            Web & Software Developer yang sedang berkarir dengan membantu pelaku bisnis untuk mempercepat pertumbuhan suatu bisni dengan digitalisasi sistem.
           </p>
 
-          <button onclick="window.location.href='tel:+6285157066051'" class="group relative inline-flex items-center gap-2 sm:gap-3 bg-[#25D366] hover:bg-[#1ebd5a] px-5 py-2.5 sm:px-6 sm:py-3 rounded-full text-white text-sm sm:text-base font-medium transition-all duration-300 shadow-lg shadow-green-500/30 hover:-translate-y-1 cursor-pointer">
-            <svg class="w-4 h-4 sm:w-5 sm:h-5 fill-white transition-transform group-hover:rotate-12" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
-              <path d="M380.9 97.1C339 55.1 283.2 32 223.9 32c-122.4 0-222 99.6-222 222 0 39.1 10.2 77.3 29.6 111L0 480l117.7-30.9c32.4 17.7 68.9 27 106.1 27h.1c122.3 0 224.1-99.6 224.1-222 0-59.3-25.2-115-67.1-157zm-157 341.6c-33.2 0-65.7-8.9-94-25.7l-6.7-4-69.8 18.3L72 359.2l-4.4-7c-18.5-29.4-28.2-63.3-28.2-98.2 0-101.7 82.8-184.5 184.6-184.5 49.3 0 95.6 19.2 130.4 54.1 34.8 34.9 56.2 81.2 56.1 130.5 0 101.8-84.9 184.6-186.6 184.6zm101.2-138.2c-5.5-2.8-32.8-16.2-37.9-18-5.1-1.9-8.8-2.8-12.5 2.8-3.7 5.6-14.3 18-17.6 21.8-3.2 3.7-6.5 4.2-12 1.4-32.6-16.3-54-29.1-75.5-66-5.7-9.8 5.7-9.1 16.3-30.3 1.8-3.7 .9-6.9-.5-9.7-1.4-2.8-12.5-30.1-17.1-41.2-4.5-10.8-9.1-9.3-12.5-9.5-3.2-.2-6.9-.2-10.6-.2-3.7 0-9.7 1.4-14.8 6.9-5.1 5.6-19.4 19-19.4 46.3 0 27.3 19.9 53.7 22.6 57.4 2.8 3.7 39.1 59.7 94.8 83.8 35.2 15.2 49 16.5 66.6 13.9 10.7-1.6 32.8-13.4 37.4-26.4 4.6-13 4.6-24.1 3.2-26.4-1.3-2.5-5-3.9-10.5-6.6z" />
-            </svg>
-            Hubungi Saya
-          </button>
+          <div class="flex gap-2">
+            <!-- Tombol WhatsApp (existing) -->
+            <div>
+              <a
+                href="https://wa.me/6285157066051"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="group relative inline-flex items-center gap-2 sm:gap-3 bg-[#25D366] hover:bg-[#1ebd5a] px-5 py-2.5 sm:px-6 sm:py-3 rounded-full text-white text-sm sm:text-base font-medium transition-all duration-300 shadow-lg shadow-green-500/30 hover:-translate-y-1 cursor-pointer"
+              >
+                <svg class="w-4 h-4 sm:w-5 sm:h-5 fill-white transition-transform group-hover:rotate-12" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
+                  <path
+                    d="M380.9 97.1C339 55.1 283.2 32 223.9 32c-122.4 0-222 99.6-222 222 0 39.1 10.2 77.3 29.6 111L0 480l117.7-30.9c32.4 17.7 68.9 27 106.1 27h.1c122.3 0 224.1-99.6 224.1-222 0-59.3-25.2-115-67.1-157zm-157 341.6c-33.2 0-65.7-8.9-94-25.7l-6.7-4-69.8 18.3L72 359.2l-4.4-7c-18.5-29.4-28.2-63.3-28.2-98.2 0-101.7 82.8-184.5 184.6-184.5 49.3 0 95.6 19.2 130.4 54.1 34.8 34.9 56.2 81.2 56.1 130.5 0 101.8-84.9 184.6-186.6 184.6zm101.2-138.2c-5.5-2.8-32.8-16.2-37.9-18-5.1-1.9-8.8-2.8-12.5 2.8-3.7 5.6-14.3 18-17.6 21.8-3.2 3.7-6.5 4.2-12 1.4-32.6-16.3-54-29.1-75.5-66-5.7-9.8 5.7-9.1 16.3-30.3 1.8-3.7 .9-6.9-.5-9.7-1.4-2.8-12.5-30.1-17.1-41.2-4.5-10.8-9.1-9.3-12.5-9.5-3.2-.2-6.9-.2-10.6-.2-3.7 0-9.7 1.4-14.8 6.9-5.1 5.6-19.4 19-19.4 46.3 0 27.3 19.9 53.7 22.6 57.4 2.8 3.7 39.1 59.7 94.8 83.8 35.2 15.2 49 16.5 66.6 13.9 10.7-1.6 32.8-13.4 37.4-26.4 4.6-13 4.6-24.1 3.2-26.4-1.3-2.5-5-3.9-10.5-6.6z"
+                  />
+                </svg>
+                Hubungi Saya
+              </a>
+            </div>
+            <div>
+              <!-- Tombol Email -->
+              <a
+                href="https://mail.google.com/mail/?view=cm&fs=1&to=ahmadrofiqi333@gmail.com"
+                id="hero-email-btn"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="group inline-flex items-center gap-2 sm:gap-2.5 bg-white/10 hover:bg-white/20 border border-white/30 hover:border-white/60 backdrop-blur-sm px-5 py-2.5 sm:px-6 sm:py-3 rounded-full text-white text-sm sm:text-base font-medium transition-all duration-300 hover:-translate-y-1"
+              >
+                <svg class="w-4 h-4 sm:w-5 sm:h-5 transition-transform group-hover:scale-110" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                </svg>
+                Email
+              </a>
+            </div>
+            <div>
+              <!-- Tombol Download CV -->
+              <a
+                href="https://drive.google.com/file/d/1LBoXoKKJryJaDVLmbF584uROE9hvRoIz/view?usp=sharing"
+                id="hero-cv-btn"
+                class="group inline-flex items-center gap-2 sm:gap-2.5 bg-white/10 hover:bg-white/20 border border-white/30 hover:border-white/60 backdrop-blur-sm px-5 py-2.5 sm:px-6 sm:py-3 rounded-full text-white text-sm sm:text-base font-medium transition-all duration-300 hover:-translate-y-1"
+                target="_blank"
+              >
+                <svg class="w-4 h-4 sm:w-5 sm:h-5 transition-transform group-hover:translate-y-0.5" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M12 10v6m0 0l-3-3m3 3l3-3M3 17v1a2 2 0 002 2h14a2 2 0 002-2v-1M8 7V5a2 2 0 012-2h4a2 2 0 012 2v2" />
+                </svg>
+                Download CV
+              </a>
+            </div>
+          </div>
         </div>
       </div>
     </section>
 
- <section id="skills" class="py-16 md:py-20 bg-white">
+    <section id="projects" class="py-16 md:py-24 bg-gray-50 border-t border-gray-200">
+      <div class="max-w-6xl mx-auto px-5 sm:px-6">
+        <div class="text-center mb-10 md:mb-16" data-aos="fade-up">
+          <h2 class="text-2xl sm:text-3xl md:text-5xl font-bold text-gray-800 mb-3 md:mb-4">Proyek Pilihan & Studi Kasus</h2>
+          <p class="text-sm md:text-base text-gray-500">Implementasi nyata ilmu rekayasa perangkat lunak dan arsitektur digital untuk menjawab tantangan bisnis.</p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8" data-aos="fade-up" data-aos-delay="100">
+          <div class="bg-white rounded-3xl shadow-sm border border-gray-100 overflow-hidden group hover:shadow-xl transition-all flex flex-col">
+            <div class="aspect-[4/3] bg-gray-200 relative overflow-hidden">
+              <img src="assets/projek/umkmbakso.webp" alt="Web UMKM Bakso" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" loading="lazy" />
+              <div class="absolute inset-0 bg-gray-900/10 group-hover:bg-transparent transition-all"></div>
+            </div>
+            <div class="p-6 md:p-8 flex flex-col flex-grow">
+              <div class="flex items-start">
+                <span class="px-3 md:px-4 py-1.5 text-[10px] md:text-xs font-semibold bg-amber-100 text-amber-700 rounded-full">Experimental Project</span>
+              </div>
+              <h3 class="text-xl md:text-2xl font-bold text-gray-800 mt-4 md:mt-5 mb-2 md:mb-3">Web UMKM Bakso</h3>
+              <p class="text-sm md:text-base text-gray-600 mb-6 leading-relaxed flex-grow">
+                Platform pemesanan dan etalase digital UMKM Bakso. Hadir untuk mempermudah pelanggan melihat menu, memesan online, serta meningkatkan visibilitas usaha lokal.
+              </p>
+              <div class="mt-auto">
+                <a href="https://umkmbakso.aro.web.id" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 px-5 py-2.5 text-sm font-medium text-gray-700 bg-white border border-gray-200 rounded-xl hover:bg-gray-50 hover:text-gray-900 transition-all duration-300 shadow-sm group/btn">
+                  <span>Kunjungi Web</span>
+                  <svg class="w-4 h-4 transform group-hover/btn:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="skills" class="py-16 md:py-20 bg-white">
       <div class="max-w-6xl mx-auto px-5 sm:px-6">
         <div class="text-center mb-10 md:mb-16" data-aos="fade-up">
           <h2 class="text-2xl sm:text-3xl md:text-5xl font-bold text-gray-800 mb-3 md:mb-4">Tech Stack & Tools</h2>
           <p class="text-sm md:text-base text-gray-500">Ekosistem teknologi modern dan instrumen pengembangan perangkat lunak berstandar industri.</p>
         </div>
-        
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8" data-aos="fade-up" data-aos-delay="100">
-          
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8" data-aos="fade-up" data-aos-delay="100">
           <div class="bg-gray-50 p-6 md:p-8 rounded-3xl border border-gray-100 shadow-sm hover:shadow-lg transition-all duration-300">
             <div class="flex items-center gap-3 mb-5 md:mb-6">
               <div class="w-10 h-10 rounded-full bg-blue-100 flex items-center justify-center text-blue-600 font-bold text-xl">💻</div>
@@ -118,27 +208,27 @@
             </div>
             <div class="flex flex-wrap gap-2 md:gap-3">
               <div class="flex items-center gap-2 bg-white px-3 md:px-4 py-2 rounded-xl border border-gray-200 shadow-sm">
-                <img src="https://img.icons8.com/color/48/000000/react-native.png" class="w-5 h-5 md:w-6 md:h-6" alt="React" />
+                <img src="https://img.icons8.com/color/48/000000/react-native.png" class="w-5 h-5 md:w-6 md:h-6" alt="React" loading="lazy" />
                 <span class="text-xs md:text-sm font-semibold text-gray-700">React.js</span>
               </div>
               <div class="flex items-center gap-2 bg-white px-3 md:px-4 py-2 rounded-xl border border-gray-200 shadow-sm">
-                <img src="https://img.icons8.com/color/48/000000/vue-js.png" class="w-5 h-5 md:w-6 md:h-6" alt="Vue" />
+                <img src="https://img.icons8.com/color/48/000000/vue-js.png" class="w-5 h-5 md:w-6 md:h-6" alt="Vue" loading="lazy" />
                 <span class="text-xs md:text-sm font-semibold text-gray-700">Vue.js</span>
               </div>
               <div class="flex items-center gap-2 bg-white px-3 md:px-4 py-2 rounded-xl border border-gray-200 shadow-sm">
-                <img src="https://img.icons8.com/color/48/000000/tailwind_css.png" class="w-5 h-5 md:w-6 md:h-6" alt="Tailwind" />
+                <img src="https://img.icons8.com/color/48/000000/tailwind_css.png" class="w-5 h-5 md:w-6 md:h-6" alt="Tailwind" loading="lazy" />
                 <span class="text-xs md:text-sm font-semibold text-gray-700">Tailwind</span>
               </div>
               <div class="flex items-center gap-2 bg-white px-3 md:px-4 py-2 rounded-xl border border-gray-200 shadow-sm">
-                <img src="https://img.icons8.com/color/48/000000/javascript.png" class="w-5 h-5 md:w-6 md:h-6" alt="JS" />
+                <img src="https://img.icons8.com/color/48/000000/javascript.png" class="w-5 h-5 md:w-6 md:h-6" alt="JS" loading="lazy" />
                 <span class="text-xs md:text-sm font-semibold text-gray-700">JavaScript</span>
               </div>
               <div class="flex items-center gap-2 bg-white px-3 md:px-4 py-2 rounded-xl border border-gray-200 shadow-sm">
-                <img src="https://img.icons8.com/color/48/000000/html-5.png" class="w-5 h-5 md:w-6 md:h-6" alt="HTML" />
+                <img src="https://img.icons8.com/color/48/000000/html-5.png" class="w-5 h-5 md:w-6 md:h-6" alt="HTML" loading="lazy" />
                 <span class="text-xs md:text-sm font-semibold text-gray-700">HTML5</span>
               </div>
               <div class="flex items-center gap-2 bg-white px-3 md:px-4 py-2 rounded-xl border border-gray-200 shadow-sm">
-                <img src="https://img.icons8.com/color/48/000000/css3.png" class="w-5 h-5 md:w-6 md:h-6" alt="CSS" />
+                <img src="https://img.icons8.com/color/48/000000/css3.png" class="w-5 h-5 md:w-6 md:h-6" alt="CSS" loading="lazy" />
                 <span class="text-xs md:text-sm font-semibold text-gray-700">CSS3</span>
               </div>
             </div>
@@ -151,15 +241,15 @@
             </div>
             <div class="flex flex-wrap gap-2 md:gap-3">
               <div class="flex items-center gap-2 bg-white px-3 md:px-4 py-2 rounded-xl border border-gray-200 shadow-sm">
-                <img src="https://img.icons8.com/color/48/000000/nodejs.png" class="w-5 h-5 md:w-6 md:h-6" alt="Node.js" />
+                <img src="https://img.icons8.com/color/48/000000/nodejs.png" class="w-5 h-5 md:w-6 md:h-6" alt="Node.js" loading="lazy" />
                 <span class="text-xs md:text-sm font-semibold text-gray-700">Node.js</span>
               </div>
               <div class="flex items-center gap-2 bg-white px-3 md:px-4 py-2 rounded-xl border border-gray-200 shadow-sm">
-                <img src="https://img.icons8.com/color/48/000000/express-js.png" class="w-5 h-5 md:w-6 md:h-6" alt="Express" />
+                <img src="https://img.icons8.com/color/48/000000/express-js.png" class="w-5 h-5 md:w-6 md:h-6" alt="Express" loading="lazy" />
                 <span class="text-xs md:text-sm font-semibold text-gray-700">Express.js</span>
               </div>
               <div class="flex items-center gap-2 bg-white px-3 md:px-4 py-2 rounded-xl border border-gray-200 shadow-sm">
-                <img src="https://img.icons8.com/color/48/000000/golang.png" class="w-5 h-5 md:w-6 md:h-6" alt="Golang" />
+                <img src="https://img.icons8.com/color/48/000000/golang.png" class="w-5 h-5 md:w-6 md:h-6" alt="Golang" loading="lazy" />
                 <span class="text-xs md:text-sm font-semibold text-gray-700">Golang</span>
               </div>
             </div>
@@ -172,15 +262,15 @@
             </div>
             <div class="flex flex-wrap gap-2 md:gap-3">
               <div class="flex items-center gap-2 bg-white px-3 md:px-4 py-2 rounded-xl border border-gray-200 shadow-sm">
-                <img src="https://img.icons8.com/color/48/000000/api-settings.png" class="w-5 h-5 md:w-6 md:h-6" alt="Service Worker" />
+                <img src="https://img.icons8.com/color/48/000000/api-settings.png" class="w-5 h-5 md:w-6 md:h-6" alt="Service Worker" loading="lazy" />
                 <span class="text-xs md:text-sm font-semibold text-gray-700">Service Workers</span>
               </div>
               <div class="flex items-center gap-2 bg-white px-3 md:px-4 py-2 rounded-xl border border-gray-200 shadow-sm">
-                <img src="https://img.icons8.com/color/48/000000/database.png" class="w-5 h-5 md:w-6 md:h-6" alt="Database" />
+                <img src="https://img.icons8.com/color/48/000000/database.png" class="w-5 h-5 md:w-6 md:h-6" alt="Database" loading="lazy" />
                 <span class="text-xs md:text-sm font-semibold text-gray-700">IndexedDB</span>
               </div>
               <div class="flex items-center gap-2 bg-white px-3 md:px-4 py-2 rounded-xl border border-gray-200 shadow-sm">
-                <img src="https://img.icons8.com/color/48/000000/git.png" class="w-5 h-5 md:w-6 md:h-6" alt="Git" />
+                <img src="https://img.icons8.com/color/48/000000/git.png" class="w-5 h-5 md:w-6 md:h-6" alt="Git" loading="lazy" />
                 <span class="text-xs md:text-sm font-semibold text-gray-700">Git / GitHub</span>
               </div>
             </div>
@@ -189,12 +279,9 @@
       </div>
     </section>
 
-
-
     <!-- ======================== ABOUT ME – TIMELINE ======================== -->
     <section id="aboutMe" class="py-16 md:py-28 bg-gray-50 border-t border-gray-100 overflow-hidden">
       <div class="max-w-5xl mx-auto px-5 sm:px-6">
-
         <!-- Header -->
         <div class="text-center mb-14 md:mb-20" data-aos="fade-up">
           <p class="text-xs font-bold tracking-[0.25em] uppercase text-[#25D366] mb-3">My Journey</p>
@@ -204,23 +291,22 @@
 
         <!-- Timeline Wrapper -->
         <div class="relative">
-
           <!-- Garis tengah vertikal -->
           <div class="absolute left-1/2 -translate-x-1/2 top-0 bottom-0 w-0.5 bg-gradient-to-b from-green-400 via-green-300 to-gray-200 hidden md:block" aria-hidden="true"></div>
           <!-- Garis mobile -->
           <div class="absolute left-6 top-0 bottom-0 w-0.5 bg-gradient-to-b from-green-400 via-green-300 to-gray-200 md:hidden" aria-hidden="true"></div>
 
           <!-- ========= ITEM 1 : SMP ========= -->
-          <div class="relative flex flex-col md:flex-row items-start md:items-center mb-12 md:mb-16" data-aos="fade-right">
+          <div class="relative flex flex-col md:flex-row items-start md:items-center mb-8 md:mb-4" data-aos="fade-right">
             <!-- Konten kiri (desktop) / full mobile -->
-            <div class="md:w-[calc(50%-2.5rem)] md:pr-10 md:text-right pl-16 md:pl-0">
-              <div class="timeline-card group bg-white rounded-2xl shadow-md border border-gray-100 p-6 hover:shadow-lg hover:-translate-y-1 transition-all duration-300 cursor-default">
+            <div class="md:w-[calc(52%-2.5rem)] lg:w-[calc(50%-2rem)] lg:pr-0 md:pr-0 md:text-right flex flex-row-reverse">
+              <div class="timeline-card group w-fit bg-white rounded-2xl shadow-md border border-gray-100 p-6 hover:shadow-lg cursor-pointer hover:-translate-y-1 transition-all duration-300 cursor-default">
                 <div class="flex items-center gap-3 mb-3 md:justify-end">
-                  <span class="inline-flex items-center justify-center w-9 h-9 rounded-xl bg-green-100 text-green-600 text-lg shrink-0">🏫</span>
+                  <span class="inline-flex items-center justify-center w-9 h-9 rounded-xl bg-green-100 text-green-600 text-lg shrink-0"><img src="./assets/icons/logo_necis.webp" alt="Logo Necis" loading="lazy" /></span>
                   <span class="text-xs font-bold tracking-widest text-green-600 uppercase">2017 – 2019</span>
                 </div>
-                <h3 class="text-lg font-bold text-gray-800 mb-1">SMP Negeri 1 Cisaat</h3>
-                <p class="text-sm text-gray-500 leading-relaxed">Fondasi awal pendidikan formal. Di sinilah rasa ingin tahu dan semangat belajar mulai terbentuk, menjadi bekal penting untuk jenjang berikutnya.</p>
+                <h3 class="text-lg font-bold text-gray-800 mb-1">Alumni SMP Negeri 1 Cisaat</h3>
+                <!-- <p class="text-sm text-gray-500 leading-relaxed">Fondasi awal pendidikan formal. Di sinilah rasa ingin tahu dan semangat belajar mulai terbentuk, menjadi bekal penting untuk jenjang berikutnya.</p> -->
               </div>
             </div>
 
@@ -234,9 +320,9 @@
           </div>
 
           <!-- ========= ITEM 2 : SMA ========= -->
-          <div class="relative flex flex-col md:flex-row items-start md:items-center mb-12 md:mb-16" data-aos="fade-left">
+          <div class="relative flex flex-col md:flex-row items-start md:items-center mb-8 md:mb-4" data-aos="fade-left">
             <!-- Sisi kiri kosong (desktop) -->
-            <div class="hidden md:block md:w-[calc(50%-2.5rem)] md:pr-10"></div>
+            <div class="hidden md:block md:w-[50%] md:pr-10"></div>
 
             <!-- Dot tengah (desktop) -->
             <div class="hidden md:flex absolute left-1/2 -translate-x-1/2 w-5 h-5 rounded-full bg-emerald-500 border-4 border-white shadow-lg z-10 items-center justify-center"></div>
@@ -244,33 +330,38 @@
             <div class="absolute left-6 -translate-x-1/2 top-7 w-4 h-4 rounded-full bg-emerald-500 border-4 border-white shadow-lg z-10 md:hidden"></div>
 
             <!-- Konten kanan (desktop) / full mobile -->
-            <div class="md:w-[calc(50%-2.5rem)] md:pl-10 pl-16 md:pl-10 w-full">
-              <div class="timeline-card group bg-white rounded-2xl shadow-md border border-gray-100 p-6 hover:shadow-lg hover:-translate-y-1 transition-all duration-300 cursor-default">
+            <div class="md:w-[50%] pl-16 md:pl-[2rem] w-full">
+              <div class="timeline-card w-fit group bg-white rounded-2xl shadow-md border border-gray-100 cursor-pointer p-6 hover:shadow-lg hover:-translate-y-1 transition-all duration-300 cursor-default">
                 <div class="flex items-center gap-3 mb-3">
-                  <span class="inline-flex items-center justify-center w-9 h-9 rounded-xl bg-emerald-100 text-emerald-600 text-lg shrink-0">🎒</span>
+                  <span class="inline-flex items-center justify-center w-9 h-9 rounded-xl bg-emerald-100 text-emerald-600 text-lg shrink-0"><img src="./assets/icons/logo._mandasi.webp" alt="Logo MAN 2 Kota Sukabumi" loading="lazy" /></span>
                   <span class="text-xs font-bold tracking-widest text-emerald-600 uppercase">2020 – 2022</span>
                 </div>
-                <h3 class="text-lg font-bold text-gray-800 mb-1">MAN 2 Kota Sukabumi</h3>
-                <p class="text-xs font-semibold text-emerald-500 mb-2">Jurusan IPA</p>
-                <p class="text-sm text-gray-500 leading-relaxed">Menempuh pendidikan di jurusan IPA — meski jauh dari dunia IT, justru di sinilah keingintahuan terhadap teknologi semakin menguat dan memantapkan pilihan untuk kuliah di bidang Informatika.</p>
+                <h3 class="text-lg font-bold text-gray-800 mb-1">Alumni MAN 2 Kota Sukabumi</h3>
+                <!-- <p class="text-xs font-semibold text-emerald-500 mb-2">Konsentrasi IPA</p>
+                <p class="text-sm text-gray-500 leading-relaxed">Menempuh pendidikan di jurusan IPA — meski belum fokus ke IT ditahap ini saya lebih berfokus belajar matematika dan logika.</p> -->
               </div>
             </div>
           </div>
 
           <!-- ========= ITEM 3 : KULIAH (header) ========= -->
-          <div class="relative flex flex-col md:flex-row items-start md:items-center mb-8" data-aos="fade-right">
+          <div class="relative flex flex-col md:flex-row items-start md:items-center mb-4" data-aos="fade-right">
             <!-- Konten kiri (desktop) / full mobile -->
-            <div class="md:w-[calc(50%-2.5rem)] md:pr-10 md:text-right pl-16 md:pl-0">
-              <div class="timeline-card group bg-gradient-to-br from-[#25D366]/10 via-white to-white rounded-2xl shadow-md border border-[#25D366]/30 p-6 hover:shadow-xl hover:-translate-y-1 transition-all duration-300 cursor-default">
+            <div class="md:w-[calc(50%-2.5rem)] md:pr-0 md:text-right pl-16 md:pl-0 flex flex-row-reverse">
+              <div
+                class="timeline-card w-fit group bg-gradient-to-br from-[#25D366]/10 via-white to-white rounded-2xl shadow-md border border-[#25D366]/30 p-6 hover:shadow-xl hover:-translate-y-1 transition-all duration-300 cursor-default"
+              >
                 <div class="flex items-center gap-3 mb-3 md:justify-end">
-                  <span class="inline-flex items-center justify-center w-9 h-9 rounded-xl bg-white border border-[#25D366]/20 shrink-0 overflow-hidden shadow-sm">
+                  <span class="inline-flex items-center justify-center w-9 h-9 shrink-0 shadow-sm">
                     <img src="https://upload.wikimedia.org/wikipedia/commons/1/13/Logo_Universitas_Nusa_Putra.png" alt="Logo Universitas Nusa Putra" class="w-full h-full object-contain p-0.5" loading="lazy" />
                   </span>
-                  <span class="text-xs font-bold tracking-widest text-[#25D366] uppercase">2022 – Sekarang</span>
+                  <span class="text-xs font-bold tracking-widest text-[#25D366] uppercase">2022 – 2026</span>
                 </div>
                 <h3 class="text-lg font-bold text-gray-800 mb-1">Universitas Nusa Putra</h3>
                 <p class="text-xs font-semibold text-[#25D366] mb-2">S1 Teknik Informatika</p>
-                <p class="text-sm text-gray-500 leading-relaxed">Studi mendalam di bidang Teknik Informatika. Riset skripsi tentang <span class="font-semibold text-gray-700">Arsitektur Offline-First pada Sistem POS</span> — menghasilkan berbagai pengalaman nyata di dunia industri dan akademis.</p>
+                <!-- <p class="text-sm text-gray-500 leading-relaxed">
+                  Studi mendalam di bidang Teknik Informatika. Riset skripsi tentang <span class="font-semibold text-gray-700">Arsitektur Offline-First pada Sistem Transactional</span> — menghasilkan berbagai pengalaman nyata di dunia
+                  industri dan akademis.
+                </p> -->
               </div>
             </div>
 
@@ -286,21 +377,28 @@
           <!-- ======= SUB-ITEMS KULIAH ======= -->
           <!-- Sub-item: Magang -->
           <div class="relative flex flex-col md:flex-row items-start md:items-center mb-6" data-aos="fade-left" data-aos-delay="80">
-            <div class="hidden md:block md:w-[calc(50%-2.5rem)] md:pr-10"></div>
+            <div class="hidden md:block md:w-[calc(50%)] md:pr-10"></div>
             <!-- Dot kecil (desktop) -->
             <div class="hidden md:flex absolute left-1/2 -translate-x-1/2 w-3.5 h-3.5 rounded-full bg-blue-400 border-3 border-white shadow z-10"></div>
             <!-- Dot kiri (mobile) -->
             <div class="absolute left-6 -translate-x-1/2 top-5 w-3 h-3 rounded-full bg-blue-400 border-2 border-white shadow z-10 md:hidden"></div>
-            <div class="md:w-[calc(50%-2.5rem)] md:pl-10 pl-16 w-full">
-              <div class="timeline-sub-card group bg-white rounded-xl shadow-sm border border-blue-100 p-4 hover:shadow-md hover:border-blue-300 hover:-translate-y-0.5 transition-all duration-300 cursor-default">
+            <div class="md:w-[50%] md:pl-[2rem] pl-16 w-full flex flex-row-reverse">
+              <div class="timeline-sub-card w-fit group bg-white rounded-xl shadow-sm border border-blue-100 p-4 hover:shadow-md hover:border-blue-300 hover:-translate-y-0.5 transition-all duration-300 cursor-default">
                 <div class="flex items-start gap-3">
                   <span class="inline-flex items-center justify-center w-8 h-8 rounded-lg bg-blue-100 text-blue-600 text-base shrink-0 mt-0.5">💼</span>
-                  <div>
+                  <div class="flex-1 min-w-0">
                     <div class="flex items-center gap-2 flex-wrap">
-                      <h4 class="text-sm font-bold text-gray-800">Magang</h4>
+                      <h4 class="text-sm font-bold text-gray-800">Magang – Mangcoding</h4>
                       <span class="px-2 py-0.5 rounded-full bg-blue-100 text-blue-600 text-[10px] font-bold tracking-wide uppercase">Internship</span>
                     </div>
-                    <p class="text-xs text-gray-500 mt-1 leading-relaxed">Pengalaman kerja nyata di dunia industri teknologi — menerapkan skill pengembangan web secara profesional dalam lingkungan tim.</p>
+                    <p class="text-[10px] text-blue-500 font-semibold mt-0.5 mb-2">Januari 2025 – Juni 2026</p>
+                    <!-- <p class="text-xs text-gray-500 leading-relaxed mb-3">Pengalaman kerja nyata di dunia industri teknologi — berkontribusi di berbagai peran pengembangan web secara profesional dalam lingkungan tim yang dinamis.</p> -->
+                    <div class="flex flex-wrap gap-1.5">
+                      <span class="inline-flex items-center gap-1 px-2 py-0.5 rounded-full bg-indigo-50 text-indigo-600 text-[10px] font-bold border border-indigo-100">⚙️ Backend Dev</span>
+                      <span class="inline-flex items-center gap-1 px-2 py-0.5 rounded-full bg-sky-50 text-sky-600 text-[10px] font-bold border border-sky-100">🎨 Frontend Dev</span>
+                      <span class="inline-flex items-center gap-1 px-2 py-0.5 rounded-full bg-green-50 text-green-600 text-[10px] font-bold border border-green-100">🛍️ Shopify Dev</span>
+                      <span class="inline-flex items-center gap-1 px-2 py-0.5 rounded-full bg-blue-50 text-blue-700 text-[10px] font-bold border border-blue-100">📝 WordPress Dev</span>
+                    </div>
                   </div>
                 </div>
               </div>
@@ -309,21 +407,31 @@
 
           <!-- Sub-item: Stupen -->
           <div class="relative flex flex-col md:flex-row items-start md:items-center mb-6" data-aos="fade-left" data-aos-delay="160">
-            <div class="hidden md:block md:w-[calc(50%-2.5rem)] md:pr-10"></div>
+            <div class="hidden md:block md:w-[50%] md:pr-10"></div>
             <!-- Dot kecil (desktop) -->
             <div class="hidden md:flex absolute left-1/2 -translate-x-1/2 w-3.5 h-3.5 rounded-full bg-violet-400 border-3 border-white shadow z-10"></div>
             <!-- Dot kiri (mobile) -->
             <div class="absolute left-6 -translate-x-1/2 top-5 w-3 h-3 rounded-full bg-violet-400 border-2 border-white shadow z-10 md:hidden"></div>
-            <div class="md:w-[calc(50%-2.5rem)] md:pl-10 pl-16 w-full">
+            <div class="md:w-[50%] md:pl-[2rem] pl-16 w-full">
               <div class="timeline-sub-card group bg-white rounded-xl shadow-sm border border-violet-100 p-4 hover:shadow-md hover:border-violet-300 hover:-translate-y-0.5 transition-all duration-300 cursor-default">
                 <div class="flex items-start gap-3">
-                  <span class="inline-flex items-center justify-center w-8 h-8 rounded-lg bg-violet-100 text-violet-600 text-base shrink-0 mt-0.5">🏅</span>
-                  <div>
+                  <span class="inline-flex items-center justify-center w-8 h-8 rounded-lg bg-violet-100 text-violet-600 text-base shrink-0 mt-0.5">🎓</span>
+                  <div class="flex-1 min-w-0">
                     <div class="flex items-center gap-2 flex-wrap">
-                      <h4 class="text-sm font-bold text-gray-800">Stupen</h4>
-                      <span class="px-2 py-0.5 rounded-full bg-violet-100 text-violet-600 text-[10px] font-bold tracking-wide uppercase">Student Pengabdi</span>
+                      <h4 class="text-sm font-bold text-gray-800">Studi Independen – Dicoding</h4>
+                      <span class="px-2 py-0.5 rounded-full bg-violet-100 text-violet-600 text-[10px] font-bold tracking-wide uppercase">Studi Independen</span>
                     </div>
-                    <p class="text-xs text-gray-500 mt-1 leading-relaxed">Program pengabdian mahasiswa — aktif berkontribusi dalam kegiatan kampus dan memberikan dampak positif bagi komunitas akademik.</p>
+                    <p class="text-[10px] text-violet-500 font-semibold mt-0.5 mb-2">DBS Coding Camp × Dicoding</p>
+                    <!-- <p class="text-xs text-gray-500 leading-relaxed mb-3">
+                      Mengikuti program Studi Independen bersertifikat melalui kolaborasi <span class="font-semibold text-gray-700">DBS Coding Camp × Dicoding</span> — memperdalam kompetensi di bidang pengembangan perangkat lunak secara
+                      intensif dan terstruktur.
+                    </p> -->
+                    <!-- Badge program -->
+                    <div class="flex flex-wrap gap-1.5 mb-4">
+                      <!-- <span class="inline-flex items-center gap-1 px-2 py-0.5 rounded-full bg-violet-50 text-violet-600 text-[10px] font-bold border border-violet-100">🏫 Kampus Merdeka</span> -->
+                      <span class="inline-flex items-center gap-1 px-2 py-0.5 rounded-full bg-blue-50 text-blue-600 text-[10px] font-bold border border-blue-100">Dicoding</span>
+                      <span class="inline-flex items-center gap-1 px-2 py-0.5 rounded-full bg-red-50 text-red-600 text-[10px] font-bold border border-red-100">DBS Foundation</span>
+                    </div>
                   </div>
                 </div>
               </div>
@@ -331,14 +439,12 @@
           </div>
 
           <!-- Sub-item: Jurnal -->
-          <div class="relative flex flex-col md:flex-row items-start md:items-center mb-6" data-aos="fade-left" data-aos-delay="240">
-            <div class="hidden md:block md:w-[calc(50%-2.5rem)] md:pr-10"></div>
-            <!-- Dot kecil (desktop) -->
+          <!-- <div class="relative flex flex-col md:flex-row items-start md:items-center mb-6" data-aos="fade-left" data-aos-delay="240">
+            <div class="hidden md:block md:w-[50%] md:pr-10"></div>
             <div class="hidden md:flex absolute left-1/2 -translate-x-1/2 w-3.5 h-3.5 rounded-full bg-amber-400 border-3 border-white shadow z-10"></div>
-            <!-- Dot kiri (mobile) -->
             <div class="absolute left-6 -translate-x-1/2 top-5 w-3 h-3 rounded-full bg-amber-400 border-2 border-white shadow z-10 md:hidden"></div>
-            <div class="md:w-[calc(50%-2.5rem)] md:pl-10 pl-16 w-full">
-              <div class="timeline-sub-card group bg-white rounded-xl shadow-sm border border-amber-100 p-4 hover:shadow-md hover:border-amber-300 hover:-translate-y-0.5 transition-all duration-300 cursor-default">
+            <div class="md:w-[50%] md:pl-[2rem] pl-16 w-full">
+              <div class="timeline-sub-card w-fit group bg-white rounded-xl shadow-sm border border-amber-100 p-4 hover:shadow-md hover:border-amber-300 hover:-translate-y-0.5 transition-all duration-300 cursor-default">
                 <div class="flex items-start gap-3">
                   <span class="inline-flex items-center justify-center w-8 h-8 rounded-lg bg-amber-100 text-amber-600 text-base shrink-0 mt-0.5">📄</span>
                   <div>
@@ -351,47 +457,80 @@
                 </div>
               </div>
             </div>
-          </div>
+          </div> -->
 
           <!-- ======= BOTTOM QUOTE ======= -->
           <div class="relative flex justify-center mt-10 md:mt-14" data-aos="fade-up">
             <div class="absolute left-1/2 -translate-x-1/2 top-0 w-0.5 h-8 bg-gradient-to-b from-gray-200 to-transparent hidden md:block"></div>
             <div class="mt-8 md:mt-0 ml-16 md:ml-0 max-w-xl text-center bg-white rounded-2xl shadow-sm border border-gray-100 px-8 py-6">
-              <p class="text-sm md:text-base text-gray-500 italic leading-relaxed">"Kualitas perangkat lunak adalah cerminan dari kedisiplinan berpikir dan konsistensi. Kode yang baik tidak hanya bekerja, tetapi juga mudah dipahami, dirawat, dan dikembangkan."</p>
+              <p class="text-sm md:text-base text-gray-500 italic leading-relaxed">
+                "Kualitas perangkat lunak adalah cerminan dari kedisiplinan berpikir dan konsistensi. Kode yang baik tidak hanya bekerja, tetapi juga mudah dipahami, dirawat, dan dikembangkan."
+              </p>
               <p class="mt-3 text-xs font-bold text-[#25D366] tracking-widest uppercase">— Ahmad Rofiqi</p>
             </div>
           </div>
-
-        </div><!-- /Timeline Wrapper -->
-      </div><!-- /Container -->
+        </div>
+        <!-- /Timeline Wrapper -->
+      </div>
+      <!-- /Container -->
     </section>
     <!-- ======================== END ABOUT ME ======================== -->
 
-      <section id="galeri" class="px-5 sm:px-6 md:px-20 py-16 md:py-20 bg-white" data-aos="fade-up">
+    <section id="galeri" class="px-5 sm:px-6 md:px-20 py-16 md:py-20 bg-white" data-aos="fade-up">
       <div class="max-w-5xl mx-auto">
         <h2 class="text-2xl sm:text-3xl md:text-4xl text-center font-bold text-gray-800 mb-2">Perspektif & Eksplorasi Visual</h2>
         <p class="text-sm md:text-base text-center text-gray-500 mb-10 md:mb-12">Di luar logika pemrograman dan algoritma, fotografi mengasah ketajaman detail dan estetika visual saya dalam merancang UI/UX.</p>
-        
+
         <div class="grid grid-cols-2 md:grid-cols-4 gap-2 sm:gap-3 md:gap-4 auto-rows-[120px] sm:auto-rows-[160px] md:auto-rows-[250px]">
           <div class="col-span-2 row-span-2 overflow-hidden rounded-xl md:rounded-2xl group cursor-pointer relative shadow-sm">
             <div class="absolute inset-0 bg-black/10 md:bg-black/20 group-hover:bg-transparent transition-all z-10"></div>
-            <img loading="lazy" decoding="async" src="./assets/galery/foto1.webp" alt="Galeri 1" class="w-full h-full object-cover transform-gpu will-change-transform group-hover:scale-110 transition-transform duration-700 ease-in-out bg-gray-200" />
+            <img
+              loading="lazy"
+              decoding="async"
+              src="./assets/galery/foto1.webp"
+              alt="Galeri 1"
+              class="w-full h-full object-cover transform-gpu will-change-transform group-hover:scale-110 transition-transform duration-700 ease-in-out bg-gray-200"
+            />
           </div>
           <div class="overflow-hidden rounded-xl md:rounded-2xl group cursor-pointer relative shadow-sm">
             <div class="absolute inset-0 bg-black/10 md:bg-black/20 group-hover:bg-transparent transition-all z-10"></div>
-            <img loading="lazy" decoding="async" src="./assets/galery/foto2.webp" alt="Galeri 2" class="w-full h-full object-cover transform-gpu will-change-transform group-hover:scale-110 transition-transform duration-700 ease-in-out bg-gray-200" />
+            <img
+              loading="lazy"
+              decoding="async"
+              src="./assets/galery/foto2.webp"
+              alt="Galeri 2"
+              class="w-full h-full object-cover transform-gpu will-change-transform group-hover:scale-110 transition-transform duration-700 ease-in-out bg-gray-200"
+            />
           </div>
           <div class="overflow-hidden rounded-xl md:rounded-2xl group cursor-pointer relative shadow-sm">
             <div class="absolute inset-0 bg-black/10 md:bg-black/20 group-hover:bg-transparent transition-all z-10"></div>
-            <img loading="lazy" decoding="async" src="./assets/galery/foto3.webp" alt="Galeri 3" class="w-full h-full object-cover transform-gpu will-change-transform group-hover:scale-110 transition-transform duration-700 ease-in-out bg-gray-200" />
+            <img
+              loading="lazy"
+              decoding="async"
+              src="./assets/galery/foto3.webp"
+              alt="Galeri 3"
+              class="w-full h-full object-cover transform-gpu will-change-transform group-hover:scale-110 transition-transform duration-700 ease-in-out bg-gray-200"
+            />
           </div>
           <div class="overflow-hidden rounded-xl md:rounded-2xl group cursor-pointer relative shadow-sm">
             <div class="absolute inset-0 bg-black/10 md:bg-black/20 group-hover:bg-transparent transition-all z-10"></div>
-            <img loading="lazy" decoding="async" src="./assets/galery/foto4.webp" alt="Galeri 4" class="w-full h-full object-cover transform-gpu will-change-transform group-hover:scale-110 transition-transform duration-700 ease-in-out bg-gray-200" />
+            <img
+              loading="lazy"
+              decoding="async"
+              src="./assets/galery/foto4.webp"
+              alt="Galeri 4"
+              class="w-full h-full object-cover transform-gpu will-change-transform group-hover:scale-110 transition-transform duration-700 ease-in-out bg-gray-200"
+            />
           </div>
           <div class="overflow-hidden rounded-xl md:rounded-2xl group cursor-pointer relative shadow-sm">
             <div class="absolute inset-0 bg-black/10 md:bg-black/20 group-hover:bg-transparent transition-all z-10"></div>
-            <img loading="lazy" decoding="async" src="./assets/galery/foto5.webp" alt="Galeri 5" class="w-full h-full object-cover transform-gpu will-change-transform group-hover:scale-110 transition-transform duration-700 ease-in-out bg-gray-200" />
+            <img
+              loading="lazy"
+              decoding="async"
+              src="./assets/galery/foto5.webp"
+              alt="Galeri 5"
+              class="w-full h-full object-cover transform-gpu will-change-transform group-hover:scale-110 transition-transform duration-700 ease-in-out bg-gray-200"
+            />
           </div>
         </div>
       </div>
@@ -409,183 +548,12 @@
         </div>
 
         <div class="grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8" data-aos="fade-up" data-aos-delay="100">
-          <!-- Card 1: Codepolitan Fullstack -->
-          <div class="fps-card cert-card group cursor-pointer" data-cert-id="codepolitan" data-tilt data-tilt-glare data-tilt-max-glare="0.3" data-tilt-scale="1.03">
-            <div class="cert-card-inner bg-gradient-to-br from-[#111827] via-[#0d131f] to-[#0a0f18] rounded-2xl border border-gray-700/80 group-hover:border-green-500/60 shadow-2xl transition-all duration-300 h-full relative overflow-hidden aspect-[4/3] sm:aspect-[1.414/1]">
+          <div class="fps-card group cursor-pointer" data-cert-id="dicoding" data-tilt data-tilt-glare data-tilt-max-glare="0.3" data-tilt-scale="1.03">
+            <div
+              class="cert-card-inner bg-gradient-to-br from-[#111827] via-[#0d131f] to-[#0a0f18] rounded-2xl border border-gray-700/80 group-hover:border-blue-500/60 shadow-2xl transition-all duration-300 h-full relative overflow-hidden aspect-[4/3] sm:aspect-[1.414/1]"
+            >
               <!-- Foto Sertifikat -->
-              <img src="assets/cert-codepolitan.png" alt="Sertifikat Codepolitan Fullstack" class="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-700 ease-out z-10 relative" onerror="this.style.display='none'; const p = this.parentElement.querySelector('.cert-placeholder'); if(p) p.style.display='flex';">
-              
-              <!-- Sleek Placeholder Frame (Ditampilkan jika foto belum disiapkan) -->
-              <div class="cert-placeholder absolute inset-0 hidden flex-col items-center justify-center p-6 text-center bg-gradient-to-br from-[#111827] via-[#0d131f] to-[#0a0f18] z-0 overflow-hidden">
-                <div class="absolute -right-12 -top-12 w-40 h-40 bg-green-500/10 rounded-full blur-2xl group-hover:bg-green-500/20 transition-all pointer-events-none"></div>
-                <div class="absolute inset-x-0 top-0 h-1 bg-gradient-to-r from-transparent via-green-500/50 group-hover:via-green-500 to-transparent transition-all duration-500"></div>
-                
-                <div class="w-14 h-14 rounded-2xl bg-green-500/10 border border-green-500/30 flex items-center justify-center text-green-400 mb-3 shadow-[0_0_20px_rgba(34,197,94,0.15)] group-hover:scale-110 transition-transform duration-300">
-                  <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"></path></svg>
-                </div>
-                <span class="text-xs font-mono font-bold tracking-widest text-green-400 uppercase mb-1">Foto Belum Tersedia</span>
-                <p class="text-[11px] text-gray-400 font-light max-w-[240px] leading-relaxed">Siapkan foto sertifikat di:<br><code class="text-gray-200 bg-black/60 px-2.5 py-0.5 rounded font-mono mt-1.5 inline-block border border-gray-700/80">assets/cert-codepolitan.png</code></p>
-              </div>
-
-              <!-- Top Badges Overlay (Floating di atas foto) -->
-              <div class="absolute top-3 sm:top-4 inset-x-3 sm:inset-x-4 flex items-center justify-between z-20 pointer-events-none">
-                <div class="flex items-center gap-1.5 px-2.5 py-1 rounded-lg bg-black/70 backdrop-blur-md border border-white/10 text-gray-200 text-[11px] font-mono shadow-lg font-semibold">
-                  <span>⚡</span>
-                  <span>Codepolitan</span>
-                </div>
-                <span class="px-2.5 py-1 rounded-full bg-green-500/20 backdrop-blur-md border border-green-500/40 text-green-400 font-mono text-[11px] font-bold tracking-wider uppercase shadow-[0_0_12px_rgba(34,197,94,0.25)] animate-pulse-glow">
-                  ★ EPIC
-                </span>
-              </div>
-
-              <!-- Bottom Glassmorphic Overlay -->
-              <div class="absolute bottom-0 inset-x-0 p-4 sm:p-5 bg-gradient-to-t from-[#0a0f16] via-[#0a0f16]/90 to-transparent pt-10 z-20 flex items-end justify-between gap-2 pointer-events-none">
-                <div class="text-left">
-                  <p class="text-[10px] font-mono text-green-400 uppercase tracking-wider mb-0.5 font-semibold">Issued: 2025 • ID: CPL-FS-8892</p>
-                  <h3 class="text-base sm:text-lg font-bold text-white group-hover:text-green-400 transition-colors tracking-tight font-mono leading-snug">
-                    CODEPOLITAN FULLSTACK
-                  </h3>
-                </div>
-                <span class="inline-flex items-center gap-1 px-3 py-1.5 rounded-xl bg-white/10 group-hover:bg-green-500 text-white group-hover:text-gray-950 text-xs font-semibold border border-white/15 group-hover:border-green-400 transition-all duration-300 shadow-lg shrink-0 group-hover:shadow-[0_0_15px_rgba(34,197,94,0.4)] pointer-events-auto">
-                  <span>Detail</span>
-                  <svg class="w-3.5 h-3.5 transform group-hover:translate-x-1 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
-                </span>
-              </div>
-            </div>
-          </div>
-
-          <!-- Card 2: Dicoding Frontend -->
-          <div class="fps-card cert-card group cursor-pointer" data-cert-id="dicoding" data-tilt data-tilt-glare data-tilt-max-glare="0.3" data-tilt-scale="1.03">
-            <div class="cert-card-inner bg-gradient-to-br from-[#111827] via-[#0d131f] to-[#0a0f18] rounded-2xl border border-gray-700/80 group-hover:border-blue-500/60 shadow-2xl transition-all duration-300 h-full relative overflow-hidden aspect-[4/3] sm:aspect-[1.414/1]">
-              <!-- Foto Sertifikat -->
-              <img src="assets/cert-dicoding.png" alt="Sertifikat Dicoding Frontend" class="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-700 ease-out z-10 relative" onerror="this.style.display='none'; const p = this.parentElement.querySelector('.cert-placeholder'); if(p) p.style.display='flex';">
-              
-              <!-- Sleek Placeholder Frame -->
-              <div class="cert-placeholder absolute inset-0 hidden flex-col items-center justify-center p-6 text-center bg-gradient-to-br from-[#111827] via-[#0d131f] to-[#0a0f18] z-0 overflow-hidden">
-                <div class="absolute -right-12 -top-12 w-40 h-40 bg-blue-500/10 rounded-full blur-2xl group-hover:bg-blue-500/20 transition-all pointer-events-none"></div>
-                <div class="absolute inset-x-0 top-0 h-1 bg-gradient-to-r from-transparent via-blue-500/50 group-hover:via-blue-500 to-transparent transition-all duration-500"></div>
-                
-                <div class="w-14 h-14 rounded-2xl bg-blue-500/10 border border-blue-500/30 flex items-center justify-center text-blue-400 mb-3 shadow-[0_0_20px_rgba(59,130,246,0.15)] group-hover:scale-110 transition-transform duration-300">
-                  <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"></path></svg>
-                </div>
-                <span class="text-xs font-mono font-bold tracking-widest text-blue-400 uppercase mb-1">Foto Belum Tersedia</span>
-                <p class="text-[11px] text-gray-400 font-light max-w-[240px] leading-relaxed">Siapkan foto sertifikat di:<br><code class="text-gray-200 bg-black/60 px-2.5 py-0.5 rounded font-mono mt-1.5 inline-block border border-gray-700/80">assets/cert-dicoding.png</code></p>
-              </div>
-
-              <!-- Top Badges Overlay -->
-              <div class="absolute top-3 sm:top-4 inset-x-3 sm:inset-x-4 flex items-center justify-between z-20 pointer-events-none">
-                <div class="flex items-center gap-1.5 px-2.5 py-1 rounded-lg bg-black/70 backdrop-blur-md border border-white/10 text-gray-200 text-[11px] font-mono shadow-lg font-semibold">
-                  <span>💎</span>
-                  <span>Google Authorized</span>
-                </div>
-                <span class="px-2.5 py-1 rounded-full bg-blue-500/20 backdrop-blur-md border border-blue-500/40 text-blue-400 font-mono text-[11px] font-bold tracking-wider uppercase shadow-[0_0_12px_rgba(59,130,246,0.25)] animate-pulse-glow">
-                  ★ RARE
-                </span>
-              </div>
-
-              <!-- Bottom Glassmorphic Overlay -->
-              <div class="absolute bottom-0 inset-x-0 p-4 sm:p-5 bg-gradient-to-t from-[#0a0f16] via-[#0a0f16]/90 to-transparent pt-10 z-20 flex items-end justify-between gap-2 pointer-events-none">
-                <div class="text-left">
-                  <p class="text-[10px] font-mono text-blue-400 uppercase tracking-wider mb-0.5 font-semibold">Issued: 2024 • ID: DCD-FE-4419</p>
-                  <h3 class="text-base sm:text-lg font-bold text-white group-hover:text-blue-400 transition-colors tracking-tight font-mono leading-snug">
-                    DICODING FRONTEND
-                  </h3>
-                </div>
-                <span class="inline-flex items-center gap-1 px-3 py-1.5 rounded-xl bg-white/10 group-hover:bg-blue-500 text-white group-hover:text-gray-950 text-xs font-semibold border border-white/15 group-hover:border-blue-400 transition-all duration-300 shadow-lg shrink-0 group-hover:shadow-[0_0_15px_rgba(59,130,246,0.4)] pointer-events-auto">
-                  <span>Detail</span>
-                  <svg class="w-3.5 h-3.5 transform group-hover:translate-x-1 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
-                </span>
-              </div>
-            </div>
-          </div>
-
-          <!-- Card 3: Mangcoding SCP -->
-          <div class="fps-card cert-card group cursor-pointer" data-cert-id="mangcoding" data-tilt data-tilt-glare data-tilt-max-glare="0.3" data-tilt-scale="1.03">
-            <div class="cert-card-inner bg-gradient-to-br from-[#111827] via-[#0d131f] to-[#0a0f18] rounded-2xl border border-gray-700/80 group-hover:border-yellow-500/60 shadow-2xl transition-all duration-300 h-full relative overflow-hidden aspect-[4/3] sm:aspect-[1.414/1]">
-              <!-- Foto Sertifikat -->
-              <img src="assets/cert-mangcoding.png" alt="Sertifikat Mangcoding SCP" class="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-700 ease-out z-10 relative" onerror="this.style.display='none'; const p = this.parentElement.querySelector('.cert-placeholder'); if(p) p.style.display='flex';">
-              
-              <!-- Sleek Placeholder Frame -->
-              <div class="cert-placeholder absolute inset-0 hidden flex-col items-center justify-center p-6 text-center bg-gradient-to-br from-[#111827] via-[#0d131f] to-[#0a0f18] z-0 overflow-hidden">
-                <div class="absolute -right-12 -top-12 w-40 h-40 bg-yellow-500/10 rounded-full blur-2xl group-hover:bg-yellow-500/20 transition-all pointer-events-none"></div>
-                <div class="absolute inset-x-0 top-0 h-1 bg-gradient-to-r from-transparent via-yellow-500/50 group-hover:via-yellow-500 to-transparent transition-all duration-500"></div>
-                
-                <div class="w-14 h-14 rounded-2xl bg-yellow-500/10 border border-yellow-500/30 flex items-center justify-center text-yellow-400 mb-3 shadow-[0_0_20px_rgba(234,179,8,0.15)] group-hover:scale-110 transition-transform duration-300">
-                  <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"></path></svg>
-                </div>
-                <span class="text-xs font-mono font-bold tracking-widest text-yellow-400 uppercase mb-1">Foto Belum Tersedia</span>
-                <p class="text-[11px] text-gray-400 font-light max-w-[240px] leading-relaxed">Siapkan foto sertifikat di:<br><code class="text-gray-200 bg-black/60 px-2.5 py-0.5 rounded font-mono mt-1.5 inline-block border border-gray-700/80">assets/cert-mangcoding.png</code></p>
-              </div>
-
-              <!-- Top Badges Overlay -->
-              <div class="absolute top-3 sm:top-4 inset-x-3 sm:inset-x-4 flex items-center justify-between z-20 pointer-events-none">
-                <div class="flex items-center gap-1.5 px-2.5 py-1 rounded-lg bg-black/70 backdrop-blur-md border border-white/10 text-gray-200 text-[11px] font-mono shadow-lg font-semibold">
-                  <span>👑</span>
-                  <span>Internship</span>
-                </div>
-                <span class="px-2.5 py-1 rounded-full bg-yellow-500/20 backdrop-blur-md border border-yellow-500/40 text-yellow-400 font-mono text-[11px] font-bold tracking-wider uppercase shadow-[0_0_12px_rgba(234,179,8,0.25)] animate-pulse-glow">
-                  ★ LEGENDARY
-                </span>
-              </div>
-
-              <!-- Bottom Glassmorphic Overlay -->
-              <div class="absolute bottom-0 inset-x-0 p-4 sm:p-5 bg-gradient-to-t from-[#0a0f16] via-[#0a0f16]/90 to-transparent pt-10 z-20 flex items-end justify-between gap-2 pointer-events-none">
-                <div class="text-left">
-                  <p class="text-[10px] font-mono text-yellow-400 uppercase tracking-wider mb-0.5 font-semibold">Issued: 2025 • ID: MNG-SCP-0001</p>
-                  <h3 class="text-base sm:text-lg font-bold text-white group-hover:text-yellow-400 transition-colors tracking-tight font-mono leading-snug">
-                    MANGCODING SCP
-                  </h3>
-                </div>
-                <span class="inline-flex items-center gap-1 px-3 py-1.5 rounded-xl bg-white/10 group-hover:bg-yellow-400 text-white group-hover:text-gray-950 text-xs font-semibold border border-white/15 group-hover:border-yellow-300 transition-all duration-300 shadow-lg shrink-0 group-hover:shadow-[0_0_15px_rgba(234,179,8,0.4)] pointer-events-auto">
-                  <span>Detail</span>
-                  <svg class="w-3.5 h-3.5 transform group-hover:translate-x-1 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
-                </span>
-              </div>
-            </div>
-          </div>
-
-          <!-- Card 4: DBS Foundation Coding Camp -->
-          <div class="fps-card cert-card group cursor-pointer" data-cert-id="dbs" data-tilt data-tilt-glare data-tilt-max-glare="0.3" data-tilt-scale="1.03">
-            <div class="cert-card-inner bg-gradient-to-br from-[#111827] via-[#0d131f] to-[#0a0f18] rounded-2xl border border-gray-700/80 group-hover:border-red-500/60 shadow-2xl transition-all duration-300 h-full relative overflow-hidden aspect-[4/3] sm:aspect-[1.414/1]">
-              <!-- Foto Sertifikat -->
-              <img src="assets/cert-dbs.png" alt="Sertifikat DBS Coding Camp" class="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-700 ease-out z-10 relative" onerror="this.style.display='none'; const p = this.parentElement.querySelector('.cert-placeholder'); if(p) p.style.display='flex';">
-              
-              <!-- Sleek Placeholder Frame -->
-              <div class="cert-placeholder absolute inset-0 hidden flex-col items-center justify-center p-6 text-center bg-gradient-to-br from-[#111827] via-[#0d131f] to-[#0a0f18] z-0 overflow-hidden">
-                <div class="absolute -right-12 -top-12 w-40 h-40 bg-red-500/10 rounded-full blur-2xl group-hover:bg-red-500/20 transition-all pointer-events-none"></div>
-                <div class="absolute inset-x-0 top-0 h-1 bg-gradient-to-r from-transparent via-red-500/50 group-hover:via-red-500 to-transparent transition-all duration-500"></div>
-                
-                <div class="w-14 h-14 rounded-2xl bg-red-500/10 border border-red-500/30 flex items-center justify-center text-red-400 mb-3 shadow-[0_0_20px_rgba(239,68,68,0.15)] group-hover:scale-110 transition-transform duration-300">
-                  <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"></path></svg>
-                </div>
-                <span class="text-xs font-mono font-bold tracking-widest text-red-400 uppercase mb-1">Foto Belum Tersedia</span>
-                <p class="text-[11px] text-gray-400 font-light max-w-[240px] leading-relaxed">Siapkan foto sertifikat di:<br><code class="text-gray-200 bg-black/60 px-2.5 py-0.5 rounded font-mono mt-1.5 inline-block border border-gray-700/80">assets/cert-dbs.png</code></p>
-              </div>
-
-              <!-- Top Badges Overlay -->
-              <div class="absolute top-3 sm:top-4 inset-x-3 sm:inset-x-4 flex items-center justify-between z-20 pointer-events-none">
-                <div class="flex items-center gap-1.5 px-2.5 py-1 rounded-lg bg-black/70 backdrop-blur-md border border-white/10 text-gray-200 text-[11px] font-mono shadow-lg font-semibold">
-                  <span>🔥</span>
-                  <span>Scholarship</span>
-                </div>
-                <span class="px-2.5 py-1 rounded-full bg-red-500/20 backdrop-blur-md border border-red-500/40 text-red-400 font-mono text-[11px] font-bold tracking-wider uppercase shadow-[0_0_12px_rgba(239,68,68,0.25)] animate-pulse-glow">
-                  ★ MYTHIC
-                </span>
-              </div>
-
-              <!-- Bottom Glassmorphic Overlay -->
-              <div class="absolute bottom-0 inset-x-0 p-4 sm:p-5 bg-gradient-to-t from-[#0a0f16] via-[#0a0f16]/90 to-transparent pt-10 z-20 flex items-end justify-between gap-2 pointer-events-none">
-                <div class="text-left">
-                  <p class="text-[10px] font-mono text-red-400 uppercase tracking-wider mb-0.5 font-semibold">Issued: 2025 • ID: DBS-FCC-9921</p>
-                  <h3 class="text-base sm:text-lg font-bold text-white group-hover:text-red-400 transition-colors tracking-tight font-mono leading-snug">
-                    DBS CODING CAMP
-                  </h3>
-                </div>
-                <span class="inline-flex items-center gap-1 px-3 py-1.5 rounded-xl bg-white/10 group-hover:bg-red-500 text-white group-hover:text-gray-950 text-xs font-semibold border border-white/15 group-hover:border-red-400 transition-all duration-300 shadow-lg shrink-0 group-hover:shadow-[0_0_15px_rgba(239,68,68,0.4)] pointer-events-auto">
-                  <span>Detail</span>
-                  <svg class="w-3.5 h-3.5 transform group-hover:translate-x-1 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
-                </span>
-              </div>
+              <img src="assets/sertifikat/dbs.webp" alt="Sertifikat Dicoding Frontend" class="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-700 ease-out z-10 relative" loading="lazy" />
             </div>
           </div>
         </div>
@@ -622,7 +590,7 @@
             <div class="absolute top-0 right-0 w-32 h-32 bg-blue-500/10 rounded-full blur-3xl group-hover:bg-blue-500/20 transition-all"></div>
             <div class="flex items-center gap-4 mb-6">
               <div class="w-12 h-12 rounded-xl bg-gray-800 flex items-center justify-center border border-gray-600">
-                <img src="https://img.icons8.com/color/48/000000/google-logo.png" alt="Google" class="w-6 h-6 grayscale group-hover:grayscale-0 transition-all" />
+                <img src="https://img.icons8.com/color/48/000000/google-logo.png" alt="Google" class="w-6 h-6 grayscale group-hover:grayscale-0 transition-all" loading="lazy" />
               </div>
               <div>
                 <h3 class="text-xl font-bold text-white">Bangkit Academy</h3>
@@ -638,76 +606,178 @@
         </div>
       </div>
     </section> -->
-
-    <section id="projects" class="py-16 md:py-24 bg-gray-50 border-t border-gray-200">
+    <!-- ===== CONTACT FORM SECTION ===== -->
+    <div class="py-16 md:py-24 bg-gradient-to-br from-gray-50 to-white border-b border-gray-100">
       <div class="max-w-6xl mx-auto px-5 sm:px-6">
-        <div class="text-center mb-10 md:mb-16" data-aos="fade-up">
-          <h2 class="text-2xl sm:text-3xl md:text-5xl font-bold text-gray-800 mb-3 md:mb-4">Proyek Pilihan & Studi Kasus</h2>
-          <p class="text-sm md:text-base text-gray-500">Implementasi nyata ilmu rekayasa perangkat lunak dan arsitektur digital untuk menjawab tantangan bisnis.</p>
-        </div>
-        
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8" data-aos="fade-up" data-aos-delay="100">
-          <div class="bg-white rounded-3xl shadow-sm border border-gray-100 overflow-hidden group hover:shadow-xl transition-all">
-            <div class="h-48 md:h-64 bg-gray-200 relative overflow-hidden">
-              <div class="absolute inset-0 bg-gray-900/10 group-hover:bg-transparent transition-all"></div>
-            </div>
-            <div class="p-6 md:p-8">
-              <span class="px-3 md:px-4 py-1.5 text-[10px] md:text-xs font-semibold bg-green-100 text-green-700 rounded-full">PWA Architecture</span>
-              <h3 class="text-xl md:text-2xl font-bold text-gray-800 mt-4 md:mt-5 mb-2 md:mb-3">POS Mangkasir (Offline-First)</h3>
-              <p class="text-sm md:text-base text-gray-600 mb-4 md:mb-6 leading-relaxed">
-                Sistem <i>Point of Sales</i> (POS) inovatif yang menjadi subjek penelitian Tugas Akhir, dirancang untuk menjamin kontinuitas bisnis tanpa hambatan konektivitas. Dibangun menggunakan arsitektur <i>Progressive Web App</i> (PWA) dengan manajemen <i>caching</i> Service Worker dan sinkronisasi data IndexedDB untuk performa <i>Offline-First</i> yang handal.
-              </p>
+        <div class="grid grid-cols-1 lg:grid-cols-5 gap-12 lg:gap-10 items-center" data-aos="fade-up">
+          <!-- Left Side: Header & Info -->
+          <div class="lg:col-span-2 lg:pr-6 text-center lg:text-left">
+            <span class="inline-block px-4 py-1.5 rounded-full bg-gray-100 border border-gray-200 text-gray-800 text-xs font-semibold tracking-widest uppercase mb-6"> Mari Terhubung </span>
+            <h2 class="text-3xl md:text-4xl lg:text-5xl font-extrabold text-gray-900 mb-6 leading-tight">Punya Ide <br class="hidden lg:block" />Cemerlang?</h2>
+            <p class="text-gray-500 text-base md:text-lg mb-10 leading-relaxed">Saya selalu terbuka untuk berdiskusi tentang proyek kolaborasi, pengembangan sistem, atau sekadar ngobrol seputar teknologi web.</p>
+
+            <!-- Contact Details (Hidden on small screens) -->
+            <div class="space-y-6 hidden lg:block">
+              <div class="flex items-center gap-4">
+                <div class="w-12 h-12 rounded-full bg-gray-50 border border-gray-200 flex items-center justify-center text-gray-800 shadow-sm transition-transform hover:scale-105">
+                  <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+                    <polyline points="22,6 12,13 2,6"></polyline>
+                  </svg>
+                </div>
+                <div>
+                  <h4 class="text-sm font-bold text-gray-900">Kirim Pesan</h4>
+                  <p class="text-sm text-gray-500">ahmadrofiqi333@gmail.com</p>
+                </div>
+              </div>
+              <div class="flex items-center gap-4">
+                <div class="w-12 h-12 rounded-full bg-gray-50 border border-gray-200 flex items-center justify-center text-gray-800 shadow-sm transition-transform hover:scale-105">
+                  <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                    <circle cx="12" cy="10" r="3"></circle>
+                  </svg>
+                </div>
+                <div>
+                  <h4 class="text-sm font-bold text-gray-900">Lokasi</h4>
+                  <p class="text-sm text-gray-500">Sukabumi, Indonesia</p>
+                </div>
+              </div>
             </div>
           </div>
 
-          <div class="bg-white rounded-3xl shadow-sm border border-gray-100 overflow-hidden group hover:shadow-xl transition-all">
-            <div class="h-48 md:h-64 bg-gray-200 relative overflow-hidden">
-              <div class="absolute inset-0 bg-gray-900/10 group-hover:bg-transparent transition-all"></div>
-            </div>
-            <div class="p-6 md:p-8">
-              <span class="px-3 md:px-4 py-1.5 text-[10px] md:text-xs font-semibold bg-blue-100 text-blue-700 rounded-full">Frontend / CMS</span>
-              <h3 class="text-xl md:text-2xl font-bold text-gray-800 mt-4 md:mt-5 mb-2 md:mb-3">Platform E-Learning Custom</h3>
-              <p class="text-sm md:text-base text-gray-600 mb-4 md:mb-6 leading-relaxed">
-                Platform manajemen pembelajaran dinamis berbasis web yang dirancang dengan arsitektur modular dan antarmuka responsif. Menyajikan pengalaman pengguna <i>(User Experience)</i> yang intuitif serta sistem pengelolaan konten kursus yang terstruktur dan teroptimasi.
-              </p>
+          <!-- Right Side: Form Card -->
+          <div class="lg:col-span-3">
+            <div class="contact-card bg-white rounded-2xl shadow-xl border border-gray-100 p-7 md:p-10 relative overflow-hidden">
+              <form id="contact-form" novalidate>
+                <!-- Row: Nama & Email -->
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-5 mb-5">
+                  <div class="contact-field-wrap">
+                    <label for="contact-name" class="contact-label">Nama Lengkap <span class="text-red-400">*</span></label>
+                    <div class="contact-input-icon-wrap">
+                      <svg class="contact-input-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+                        <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2" />
+                        <circle cx="12" cy="7" r="4" />
+                      </svg>
+                      <input type="text" id="contact-name" name="from_name" class="contact-input" placeholder="Ahmad Rofiqi" required autocomplete="name" />
+                    </div>
+                    <span class="contact-error" id="error-name"></span>
+                  </div>
+                  <div class="contact-field-wrap">
+                    <label for="contact-email" class="contact-label">Email <span class="text-red-400">*</span></label>
+                    <div class="contact-input-icon-wrap">
+                      <svg class="contact-input-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+                        <rect x="2" y="4" width="20" height="16" rx="2" />
+                        <path d="m22 7-10 7L2 7" />
+                      </svg>
+                      <input type="email" id="contact-email" name="reply_to" class="contact-input" placeholder="kamu@email.com" required autocomplete="email" />
+                    </div>
+                    <span class="contact-error" id="error-email"></span>
+                  </div>
+                </div>
+
+                <!-- Subjek -->
+                <div class="contact-field-wrap mb-5">
+                  <label for="contact-subject" class="contact-label">Subjek</label>
+                  <div class="contact-input-icon-wrap">
+                    <svg class="contact-input-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z" /></svg>
+                    <input type="text" id="contact-subject" name="subject" class="contact-input" placeholder="Diskusi proyek / kolaborasi / lainnya" autocomplete="off" />
+                  </div>
+                </div>
+
+                <!-- Pesan -->
+                <div class="contact-field-wrap mb-7">
+                  <label for="contact-message" class="contact-label">Pesan <span class="text-red-400">*</span></label>
+                  <textarea id="contact-message" name="message" class="contact-input contact-textarea" rows="5" placeholder="Halo Ahmad, saya ingin berdiskusi tentang..." required></textarea>
+                  <span class="contact-error" id="error-message"></span>
+                </div>
+
+                <!-- Submit Button -->
+                <button type="submit" id="contact-submit-btn" class="contact-submit-btn w-full">
+                  <span id="contact-btn-text" class="flex items-center justify-center gap-2">
+                    <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="m22 2-7 20-4-9-9-4 20-7z" /></svg>
+                    Kirim Pesan
+                  </span>
+                  <span id="contact-btn-loading" class="hidden flex items-center justify-center gap-2">
+                    <svg class="w-4 h-4 animate-spin" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M21 12a9 9 0 1 1-6.219-8.56" /></svg>
+                    Mengirim...
+                  </span>
+                </button>
+
+                <!-- Alert Messages -->
+                <div id="contact-success" class="contact-alert contact-alert-success hidden" role="alert">
+                  <svg class="w-5 h-5 shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2">
+                    <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14" />
+                    <path d="m22 4-10 10.01-3-3" />
+                  </svg>
+                  <span>Pesan berhasil terkirim! Saya akan membalasnya secepatnya.</span>
+                </div>
+                <div id="contact-error-global" class="contact-alert contact-alert-error hidden" role="alert">
+                  <svg class="w-5 h-5 shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2">
+                    <circle cx="12" cy="12" r="10" />
+                    <line x1="12" x2="12" y1="8" y2="12" />
+                    <line x1="12" x2="12.01" y1="16" y2="16" />
+                  </svg>
+                  <span>Gagal mengirim pesan. Coba lagi atau hubungi via WhatsApp.</span>
+                </div>
+              </form>
             </div>
           </div>
         </div>
       </div>
-    </section>
-
+    </div>
+    <!-- ===== END CONTACT FORM ===== -->
     <section class="py-20 md:py-24 bg-gray-900 text-center px-5 sm:px-6" data-aos="fade-up">
       <div class="max-w-4xl mx-auto">
         <blockquote class="text-lg sm:text-xl md:text-3xl font-light text-gray-300 italic mb-6 md:mb-8 leading-relaxed">
-          "Ketika jalan yang kamu ambil terasa <span class="text-white font-semibold">sulit</span>, bayangkan diri kamu di masa depan, di mana kamu sudah tidak punya <span class="text-white font-semibold">waktu</span> lagi untuk belajar. Momen saat ini adalah <span class="text-white font-semibold">doa yang dikabulkan</span>."
+          "Ketika jalan yang kamu ambil terasa <span class="text-white font-semibold">sulit</span>, bayangkan diri kamu di masa depan, di mana kamu sudah tidak punya <span class="text-white font-semibold">waktu</span> lagi untuk belajar.
+          Momen saat ini adalah <span class="text-white font-semibold">doa yang dikabulkan</span>."
         </blockquote>
         <p class="text-[#25D366] font-semibold tracking-widest uppercase text-xs md:text-sm">— My Mentor</p>
       </div>
     </section>
 
-    <footer id="medsos" class="py-12 md:py-16 bg-white border-t border-gray-200">
-      <div class="max-w-4xl mx-auto text-center px-5 sm:px-6">
-        <h2 class="text-xl md:text-2xl font-bold text-gray-800 mb-6 md:mb-8">Mari Terhubung</h2>
-        <div class="flex justify-center flex-wrap gap-4 md:gap-6 mb-10 md:mb-12">
-          <a href="https://github.com/ARofiqi" target="_blank" class="w-12 h-12 md:w-14 md:h-14 flex items-center justify-center bg-gray-50 border border-gray-100 rounded-full hover:bg-gray-900 hover:text-white transition-all shadow-sm hover:-translate-y-1">
-            <img src="https://img.icons8.com/ios-filled/24/000000/github.png" alt="GitHub" class="w-5 h-5 md:w-6 md:h-6 hover:invert" />
-          </a>
-          <a href="https://www.linkedin.com/in/ahmad-rofiqi-8aa90417b/" target="_blank" class="w-12 h-12 md:w-14 md:h-14 flex items-center justify-center bg-gray-50 border border-gray-100 rounded-full hover:bg-blue-600 hover:text-white transition-all shadow-sm hover:-translate-y-1">
-            <img src="https://img.icons8.com/ios-filled/24/000000/linkedin.png" alt="LinkedIn" class="w-5 h-5 md:w-6 md:h-6 hover:invert" />
-          </a>
-          <a href="https://wa.me/0859106924027" target="_blank" class="w-12 h-12 md:w-14 md:h-14 flex items-center justify-center bg-gray-50 border border-gray-100 rounded-full hover:bg-green-500 hover:text-white transition-all shadow-sm hover:-translate-y-1">
-            <img src="https://img.icons8.com/ios-filled/24/000000/whatsapp--v1.png" alt="WhatsApp" class="w-5 h-5 md:w-6 md:h-6 hover:invert" />
-          </a>
+    <footer id="medsos" class="bg-white border-t border-gray-200">
+      <!-- Social & Copyright -->
+      <div class="py-12 md:py-16">
+        <div class="max-w-4xl mx-auto text-center px-5 sm:px-6">
+          <h2 class="text-xl md:text-2xl font-bold text-gray-800 mb-6 md:mb-8">Mari Terhubung</h2>
+          <div class="flex justify-center flex-wrap gap-4 md:gap-6 mb-10 md:mb-12">
+            <a
+              href="https://github.com/ARofiqi"
+              target="_blank"
+              class="group w-12 h-12 md:w-14 md:h-14 flex items-center justify-center bg-gray-50 border border-gray-100 rounded-full hover:bg-gray-900 hover:text-white transition-all shadow-sm hover:-translate-y-1"
+            >
+              <img src="https://img.icons8.com/ios-filled/24/000000/github.png" alt="GitHub" class="w-5 h-5 md:w-6 md:h-6 group-hover:invert transition-all" loading="lazy" />
+            </a>
+            <a
+              href="https://www.linkedin.com/in/ahmad-rofiqi-8aa90417b/"
+              target="_blank"
+              class="group w-12 h-12 md:w-14 md:h-14 flex items-center justify-center bg-gray-50 border border-gray-100 rounded-full hover:bg-blue-600 hover:text-white transition-all shadow-sm hover:-translate-y-1"
+            >
+              <img src="https://img.icons8.com/ios-filled/24/000000/linkedin.png" alt="LinkedIn" class="w-5 h-5 md:w-6 md:h-6 group-hover:invert transition-all" loading="lazy" />
+            </a>
+            <a
+              href="https://wa.me/0859106924027"
+              target="_blank"
+              class="group w-12 h-12 md:w-14 md:h-14 flex items-center justify-center bg-gray-50 border border-gray-100 rounded-full hover:bg-green-500 hover:text-white transition-all shadow-sm hover:-translate-y-1"
+            >
+              <img src="https://img.icons8.com/ios-filled/24/000000/whatsapp--v1.png" alt="WhatsApp" class="w-5 h-5 md:w-6 md:h-6 group-hover:invert transition-all" loading="lazy" />
+            </a>
+          </div>
+          <p class="text-gray-500 text-xs md:text-sm">© 2026 Ahmad Rofiqi | Web & Software Developer. Crafted with clean code & System Thinking.</p>
         </div>
-        <p class="text-gray-500 text-xs md:text-sm">© 2026 Ahmad Rofiqi | Fresh Graduate Teknik Informatika & Software Developer. Crafted with clean code & System Thinking.</p>
       </div>
     </footer>
 
     <!-- ================= CERTIFICATE DETAIL DRAWER ================= -->
     <div id="cert-drawer-backdrop" class="fixed inset-0 bg-black/80 backdrop-blur-sm z-[100] opacity-0 pointer-events-none transition-opacity duration-300"></div>
 
-    <div id="cert-drawer-panel" data-lenis-prevent="true" data-lenis-prevent class="fixed inset-y-0 right-0 w-full max-w-lg md:max-w-xl bg-[#0b101a] border-l border-gray-800 shadow-[0_0_60px_rgba(0,0,0,0.95)] z-[101] transform translate-x-full transition-transform duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] flex flex-col h-full max-h-screen overflow-hidden text-white">
-      
+    <div
+      id="cert-drawer-panel"
+      data-lenis-prevent="true"
+      data-lenis-prevent
+      class="fixed inset-y-0 right-0 w-full max-w-lg md:max-w-xl bg-[#0b101a] border-l border-gray-800 z-[101] transform translate-x-full transition-transform duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] flex flex-col h-full max-h-screen overflow-hidden text-white"
+    >
       <div class="flex items-center justify-between px-6 md:px-8 py-5 border-b border-gray-800/80 bg-[#0b101a]/95 backdrop-blur-md sticky top-0 z-20 shrink-0">
         <div class="flex items-center gap-3">
           <span id="drawer-rarity-badge" class="px-3.5 py-1 rounded-full bg-green-500/10 border border-green-500/30 text-green-400 font-mono text-xs font-bold tracking-wider uppercase shadow-[0_0_12px_rgba(34,197,94,0.2)]">
@@ -718,22 +788,28 @@
             Verified Authentic
           </span>
         </div>
-        <button id="close-drawer-btn" class="w-10 h-10 rounded-full bg-gray-800/80 hover:bg-red-500/20 text-gray-400 hover:text-red-400 border border-gray-700/60 hover:border-red-500/40 flex items-center justify-center transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-red-500/50 group" title="Tutup Drawer">
-          <svg class="w-5 h-5 transform group-hover:rotate-90 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
+        <button
+          id="close-drawer-btn"
+          class="w-10 h-10 rounded-full bg-gray-800/80 hover:bg-red-500/20 text-gray-400 hover:text-red-400 border border-gray-700/60 hover:border-red-500/40 flex items-center justify-center transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-red-500/50 group"
+          title="Tutup Drawer"
+        >
+          <svg class="w-5 h-5 transform group-hover:rotate-90 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+          </svg>
         </button>
       </div>
 
       <div id="drawer-scroll-content" data-lenis-prevent="true" data-lenis-prevent class="flex-1 min-h-0 overflow-y-auto px-6 md:px-8 py-6 space-y-7 custom-scrollbar">
-        <div id="drawer-cert-banner" class="w-full aspect-[1.414/1] rounded-2xl p-6 md:p-8 bg-gradient-to-br from-gray-900 via-[#111827] to-[#0a0f16] border-2 border-gray-700/80 relative overflow-hidden flex flex-col justify-between shadow-2xl group">
-        </div>
+        <div
+          id="drawer-cert-banner"
+          class="w-full aspect-[1.414/1] rounded-2xl p-6 md:p-8 bg-gradient-to-br from-gray-900 via-[#111827] to-[#0a0f16] border-2 border-gray-700/80 relative overflow-hidden flex flex-col justify-between shadow-2xl group"
+        ></div>
 
         <div>
           <p id="drawer-cert-subtitle" class="text-xs font-mono text-green-400 uppercase tracking-widest mb-1 font-semibold">Certificate of Competency</p>
           <h2 id="drawer-cert-title" class="text-2xl md:text-3xl font-bold text-white tracking-tight font-mono leading-tight mb-3">Codepolitan Fullstack</h2>
           <div class="flex flex-wrap items-center gap-x-4 gap-y-2 text-sm text-gray-400 font-light border-b border-gray-800/80 pb-4">
-            <span id="drawer-cert-issuer" class="flex items-center gap-1.5 text-gray-300 font-medium">
-              <span class="text-green-400 font-bold">✓</span> Codepolitan
-            </span>
+            <span id="drawer-cert-issuer" class="flex items-center gap-1.5 text-gray-300 font-medium"> <span class="text-green-400 font-bold">✓</span> Codepolitan </span>
             <span class="text-gray-600">•</span>
             <span id="drawer-cert-date" class="text-gray-400 font-mono text-xs">Issued: August 2025</span>
             <span class="text-gray-600">•</span>
@@ -743,11 +819,12 @@
 
         <div class="space-y-3">
           <h3 class="text-sm font-semibold text-gray-300 uppercase tracking-wider font-mono flex items-center gap-2">
-            <svg class="w-4 h-4 text-green-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path></svg>
+            <svg class="w-4 h-4 text-green-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path>
+            </svg>
             Tentang Program & Kompetensi
           </h3>
-          <p id="drawer-cert-desc" class="text-sm md:text-base text-gray-300 leading-relaxed font-light text-justify bg-gray-900/50 p-4.5 rounded-xl border border-gray-800/70">
-          </p>
+          <p id="drawer-cert-desc" class="text-sm md:text-base text-gray-300 leading-relaxed font-light text-justify bg-gray-900/50 p-4.5 rounded-xl border border-gray-800/70"></p>
         </div>
 
         <div class="space-y-3">
@@ -755,8 +832,7 @@
             <svg class="w-4 h-4 text-green-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"></path></svg>
             Teknologi & Keahlian yang Dikuasai
           </h3>
-          <div id="drawer-cert-skills" class="flex flex-wrap gap-2">
-          </div>
+          <div id="drawer-cert-skills" class="flex flex-wrap gap-2"></div>
         </div>
 
         <div class="space-y-3 pb-4">
@@ -764,22 +840,68 @@
             <svg class="w-4 h-4 text-green-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
             Pencapaian & Poin Utama
           </h3>
-          <div id="drawer-cert-highlights" class="space-y-2.5">
-          </div>
+          <div id="drawer-cert-highlights" class="space-y-2.5"></div>
         </div>
       </div>
 
       <div class="p-6 border-t border-gray-800/80 bg-[#0b101a]/95 backdrop-blur-md sticky bottom-0 z-20 shrink-0 flex flex-col sm:flex-row items-center justify-between gap-3">
-        <a id="drawer-verify-btn" href="#" target="_blank" class="w-full sm:w-auto flex-1 flex items-center justify-center gap-2 px-6 py-3.5 rounded-xl bg-gradient-to-r from-green-500 to-emerald-600 hover:from-green-400 hover:to-emerald-500 text-gray-950 font-bold text-sm tracking-wide shadow-[0_0_20px_rgba(34,197,94,0.3)] hover:shadow-[0_0_30px_rgba(34,197,94,0.5)] transition-all transform active:scale-95">
-          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path></svg>
+        <a
+          id="drawer-verify-btn"
+          href="#"
+          target="_blank"
+          class="w-full sm:w-auto flex-1 flex items-center justify-center gap-2 px-6 py-3.5 rounded-xl bg-gradient-to-r from-green-500 to-emerald-600 hover:from-green-400 hover:to-emerald-500 text-gray-950 font-bold text-sm tracking-wide shadow-[0_0_20px_rgba(34,197,94,0.3)] hover:shadow-[0_0_30px_rgba(34,197,94,0.5)] transition-all transform active:scale-95"
+        >
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"
+            ></path>
+          </svg>
           <span>Verifikasi Kredensial Resmi</span>
         </a>
-        <button id="drawer-close-bottom-btn" class="w-full sm:w-auto px-6 py-3.5 rounded-xl bg-gray-800 hover:bg-gray-700 text-gray-300 hover:text-white font-medium text-sm transition-colors border border-gray-700">
-          Tutup Detail
-        </button>
+        <button id="drawer-close-bottom-btn" class="w-full sm:w-auto px-6 py-3.5 rounded-xl bg-gray-800 hover:bg-gray-700 text-gray-300 hover:text-white font-medium text-sm transition-colors border border-gray-700">Tutup Detail</button>
       </div>
-
     </div>
+
+    <!-- ====== LIGHTBOX MODAL ====== -->
+    <div id="img-lightbox" class="fixed inset-0 z-[9999] flex items-center justify-center p-4 sm:p-8 opacity-0 pointer-events-none transition-opacity duration-300" role="dialog" aria-modal="true" aria-label="Lightbox sertifikat">
+      <!-- Backdrop -->
+      <div id="lightbox-backdrop" class="absolute inset-0 bg-black/80 backdrop-blur-md" onclick="closeLightbox()"></div>
+
+      <!-- Panel -->
+      <div id="lightbox-panel" class="relative z-10 max-w-4xl w-full flex flex-col items-center gap-4 scale-90 transition-transform duration-300">
+        <!-- Tombol tutup -->
+        <button
+          onclick="closeLightbox()"
+          class="absolute cursor-pointer -top-3 -right-3 z-20 w-9 h-9 rounded-full hover:bg-black/80 border border-whites bg-black flex items-center justify-center text-white transition-all duration-200 hover:scale-110 focus:outline-none"
+          aria-label="Tutup lightbox"
+        >
+          <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" /></svg>
+        </button>
+
+        <!-- Gambar -->
+        <div class="w-full rounded-2xl overflow-hidden shadow-2xl border border-white/10 bg-gray-900">
+          <img id="lightbox-img" src="" alt="" class="w-full h-auto max-h-[80vh] object-contain" />
+        </div>
+
+        <!-- Caption & actions -->
+        <!-- <div class="flex items-center justify-between w-full px-1">
+          <p id="lightbox-caption" class="text-white/70 text-xs font-medium truncate"></p>
+          <a
+            id="lightbox-download"
+            href=""
+            download
+            class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-white/10 hover:bg-white/20 border border-white/20 text-white text-xs font-semibold transition-all duration-200 hover:scale-105 backdrop-blur-sm"
+          >
+            <svg xmlns="http://www.w3.org/2000/svg" class="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" /></svg>
+            Unduh
+          </a>
+        </div> -->
+      </div>
+    </div>
+    <!-- ====== END LIGHTBOX MODAL ====== -->
 
     <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/vanilla-tilt/1.8.1/vanilla-tilt.min.js"></script>
@@ -788,10 +910,131 @@
     <script>
       VanillaTilt.init(document.querySelectorAll(".fps-card"), { max: 15, speed: 400, glare: true, "max-glare": 0.4 });
       const lenis = new Lenis({ duration: 1.2, easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)), smooth: true });
-      function raf(time) { lenis.raf(time); requestAnimationFrame(raf); }
+      function raf(time) {
+        lenis.raf(time);
+        requestAnimationFrame(raf);
+      }
       requestAnimationFrame(raf);
       AOS.init({ once: true, offset: 50 });
     </script>
     <script src="./script.js"></script>
+
+    <!-- =========================================
+         EMAILJS SDK + CONTACT FORM HANDLER
+    ========================================= -->
+    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+    <script type="module">
+      (function () {
+        // ─────────────────────────────────────────────────────────────────
+        // KONFIGURASI EMAILJS — Mengambil dari file .env
+        // ─────────────────────────────────────────────────────────────────
+        const EMAILJS_PUBLIC_KEY = import.meta.env.VITE_EMAILJS_PUBLIC_KEY;
+        const EMAILJS_SERVICE_ID = import.meta.env.VITE_EMAILJS_SERVICE_ID;
+        const EMAILJS_TEMPLATE_ID = import.meta.env.VITE_EMAILJS_TEMPLATE_ID;
+
+        emailjs.init({ publicKey: EMAILJS_PUBLIC_KEY });
+
+        // ── Element refs ──────────────────────────────────────────────────
+        const form = document.getElementById("contact-form");
+        const btnText = document.getElementById("contact-btn-text");
+        const btnLoading = document.getElementById("contact-btn-loading");
+        const submitBtn = document.getElementById("contact-submit-btn");
+        const successAlert = document.getElementById("contact-success");
+        const errorAlert = document.getElementById("contact-error-global");
+
+        // ── Helpers ───────────────────────────────────────────────────────
+        function showError(fieldId, errorId, msg) {
+          const field = document.getElementById(fieldId);
+          const err = document.getElementById(errorId);
+          if (field) field.classList.add("input-error");
+          if (err) err.textContent = msg;
+        }
+
+        function clearErrors() {
+          ["contact-name", "contact-email", "contact-message"].forEach((id) => {
+            const el = document.getElementById(id);
+            if (el) el.classList.remove("input-error");
+          });
+          ["error-name", "error-email", "error-message"].forEach((id) => {
+            const el = document.getElementById(id);
+            if (el) el.textContent = "";
+          });
+          successAlert.classList.add("hidden");
+          errorAlert.classList.add("hidden");
+        }
+
+        function setLoading(loading) {
+          submitBtn.disabled = loading;
+          btnText.classList.toggle("hidden", loading);
+          btnLoading.classList.toggle("hidden", !loading);
+        }
+
+        function isValidEmail(email) {
+          return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+        }
+
+        // ── Validation ────────────────────────────────────────────────────
+        function validate() {
+          let valid = true;
+          const name = document.getElementById("contact-name").value.trim();
+          const email = document.getElementById("contact-email").value.trim();
+          const message = document.getElementById("contact-message").value.trim();
+
+          if (!name) {
+            showError("contact-name", "error-name", "Nama wajib diisi.");
+            valid = false;
+          }
+          if (!email) {
+            showError("contact-email", "error-email", "Email wajib diisi.");
+            valid = false;
+          } else if (!isValidEmail(email)) {
+            showError("contact-email", "error-email", "Format email tidak valid.");
+            valid = false;
+          }
+          if (!message) {
+            showError("contact-message", "error-message", "Pesan wajib diisi.");
+            valid = false;
+          }
+          return valid;
+        }
+
+        // ── Submit handler ────────────────────────────────────────────────
+        form.addEventListener("submit", function (e) {
+          e.preventDefault();
+          clearErrors();
+
+          if (!validate()) return;
+          setLoading(true);
+
+          emailjs
+            .sendForm(EMAILJS_SERVICE_ID, EMAILJS_TEMPLATE_ID, form)
+            .then(function () {
+              setLoading(false);
+              successAlert.classList.remove("hidden");
+              form.reset();
+              // Scroll ke alert
+              successAlert.scrollIntoView({ behavior: "smooth", block: "nearest" });
+            })
+            .catch(function (err) {
+              console.error("EmailJS error:", err);
+              setLoading(false);
+              errorAlert.classList.remove("hidden");
+            });
+        });
+
+        // ── Real-time clear error on input ────────────────────────────────
+        ["contact-name", "contact-email", "contact-message"].forEach((id) => {
+          const el = document.getElementById(id);
+          if (el) {
+            el.addEventListener("input", function () {
+              this.classList.remove("input-error");
+              const errId = "error-" + id.replace("contact-", "");
+              const errEl = document.getElementById(errId);
+              if (errEl) errEl.textContent = "";
+            });
+          }
+        });
+      })();
+    </script>
   </body>
 </html>
