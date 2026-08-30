@@ -166,3 +166,74 @@ window.addEventListener("keydown", (e) => {
     closeLightbox();
   }
 });
+
+// ==========================================
+// 5. DRAG AND DROP BOARD
+// ==========================================
+document.addEventListener("DOMContentLoaded", () => {
+  const board = document.getElementById("tech-board");
+  const draggables = document.querySelectorAll(".draggable-card");
+  const gridSize = 40;
+
+  draggables.forEach(card => {
+    let isDragging = false;
+    let startX, startY, initialLeft, initialTop;
+
+    card.addEventListener('pointerdown', (e) => {
+      // Ignore right clicks or if clicking inside a button
+      if (e.button !== 0) return;
+      
+      isDragging = true;
+      startX = e.clientX;
+      startY = e.clientY;
+      
+      // Get initial computed style top/left
+      const style = window.getComputedStyle(card);
+      initialLeft = parseInt(style.left, 10) || 0;
+      initialTop = parseInt(style.top, 10) || 0;
+      
+      card.style.zIndex = 50;
+      card.style.cursor = 'grabbing';
+      card.setPointerCapture(e.pointerId);
+      
+      // Remove transition so it drags smoothly
+      card.style.transition = 'none';
+    });
+
+    card.addEventListener('pointermove', (e) => {
+      if (!isDragging) return;
+      
+      const dx = e.clientX - startX;
+      const dy = e.clientY - startY;
+      
+      let newLeft = initialLeft + dx;
+      let newTop = initialTop + dy;
+      
+      // Snap to grid
+      newLeft = Math.round(newLeft / gridSize) * gridSize;
+      newTop = Math.round(newTop / gridSize) * gridSize;
+      
+      // Boundary restrictions
+      const rect = card.getBoundingClientRect();
+      const boardRect = board.getBoundingClientRect();
+      
+      if (newLeft < 0) newLeft = 0;
+      if (newTop < 0) newTop = 0;
+      if (newLeft + rect.width > boardRect.width) newLeft = Math.floor((boardRect.width - rect.width) / gridSize) * gridSize;
+      if (newTop + rect.height > boardRect.height) newTop = Math.floor((boardRect.height - rect.height) / gridSize) * gridSize;
+
+      card.style.left = `${newLeft}px`;
+      card.style.top = `${newTop}px`;
+    });
+
+    card.addEventListener('pointerup', (e) => {
+      if (!isDragging) return;
+      isDragging = false;
+      card.style.zIndex = 10;
+      card.style.cursor = 'grab';
+      card.releasePointerCapture(e.pointerId);
+      card.style.transition = 'box-shadow 0.3s ease'; // Restore shadow transition
+    });
+  });
+});
+
