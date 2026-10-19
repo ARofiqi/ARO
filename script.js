@@ -105,6 +105,8 @@ if (navLinks.length > 0 && observedSections.length > 0 && "IntersectionObserver"
 // 2. CERTIFICATE DRAWER DATA & LOGIC
 // ==========================================
 
+import dbsCertImg from "./assets/sertifikat/dbs.webp";
+
 const certificatesData = {
   dicoding: {
     rarity: "★ VERIFIED CREDENTIAL",
@@ -113,7 +115,7 @@ const certificatesData = {
     issuer: "Dicoding Indonesia × DBS Foundation",
     date: "Issued: 2025",
     id: "ID: DBS-DICODING-2025",
-    image: "assets/sertifikat/dbs.webp",
+    image: dbsCertImg,
     verifyUrl: "https://www.dicoding.com",
     desc: "Program beasiswa dan Studi Independen intensif hasil kolaborasi DBS Foundation bersama Dicoding Indonesia. Kurikulum berfokus pada rekayasa perangkat lunak modern, pengembangan antarmuka web yang responsif dan aksesibel, pengelolaan state serta integrasi API, hingga penerapan clean code berstandar industri.",
     skills: [
