@@ -77,22 +77,78 @@ html.lenis body {
   max-height: 100%;
 }
 
-/* Tech Board Responsive Layout: Bento Grid on Mobile, Draggable Canvas on Desktop */
-@media (max-width: 767px) {
-  #tech-board {
-    height: auto !important;
-    padding: 1rem;
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: 1rem;
+/* Tech Stack Marquee */
+.marquee {
+  overflow: hidden;
+  -webkit-mask-image: linear-gradient(to right, transparent, #000 12%, #000 88%, transparent);
+  mask-image: linear-gradient(to right, transparent, #000 12%, #000 88%, transparent);
+}
+.marquee-track {
+  display: flex;
+  width: max-content;
+  animation: marquee-scroll 45s linear infinite;
+}
+.marquee-reverse .marquee-track {
+  animation-direction: reverse;
+}
+.marquee:hover .marquee-track {
+  animation-play-state: paused;
+}
+/* padding-right = gap, so each set is identical in width and -50% loops seamlessly */
+.marquee-set {
+  display: flex;
+  gap: 1rem;
+  padding-right: 1rem;
+}
+.tech-pill {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.75rem 1.25rem;
+  background: #fff;
+  border: 1px solid rgb(229 231 235 / 0.9);
+  border-radius: 1rem;
+  box-shadow: 0 1px 2px rgb(0 0 0 / 0.04);
+  font-size: 0.9375rem;
+  font-weight: 600;
+  color: #1f2937;
+  white-space: nowrap;
+}
+.tech-pill img {
+  width: 1.75rem;
+  height: 1.75rem;
+}
+.tech-chip {
+  padding: 0.25rem 0.75rem;
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: #374151;
+  background: #fff;
+  border: 1px solid rgb(229 231 235 / 0.9);
+  border-radius: 0.5rem;
+}
+@keyframes marquee-scroll {
+  to {
+    transform: translateX(-50%);
   }
-  .draggable-card {
-    position: relative !important;
-    top: auto !important;
-    left: auto !important;
-    width: 100% !important;
-    cursor: default !important;
-    touch-action: pan-y !important;
+}
+@media (prefers-reduced-motion: reduce) {
+  .marquee {
+    -webkit-mask-image: none;
+    mask-image: none;
+  }
+  .marquee-track {
+    animation: none;
+    width: auto;
+    justify-content: center;
+  }
+  .marquee-set {
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 0 1.25rem;
+  }
+  .marquee-set + .marquee-set {
+    display: none;
   }
 }
 
